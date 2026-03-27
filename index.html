@@ -20277,15 +20277,16 @@ document.querySelectorAll('.version-header').forEach(hdr => {
 
     // Group by ISO week
     const weeks = {};
+    function localDateKey(dt) { return dt.getFullYear() + '-' + String(dt.getMonth()+1).padStart(2,'0') + '-' + String(dt.getDate()).padStart(2,'0'); }
     releaseData.forEach(r => {
-      const d = new Date(r.date);
+      const d = new Date(r.date + 'T00:00:00');
       if (d < cutoff) return;
       // Week start (Monday)
       const day = d.getDay();
       const diff = d.getDate() - day + (day === 0 ? -6 : 1);
       const weekStart = new Date(d);
       weekStart.setDate(diff);
-      const key = weekStart.toISOString().slice(0, 10);
+      const key = localDateKey(weekStart);
       if (!weeks[key]) weeks[key] = { releases: 0, entries: 0 };
       weeks[key].releases += 1;
       weeks[key].entries += r.entries;
@@ -20297,7 +20298,7 @@ document.querySelectorAll('.version-header').forEach(hdr => {
     const day = cur.getDay();
     cur.setDate(cur.getDate() - day + (day === 0 ? -6 : 1));
     while (cur <= now) {
-      const key = cur.toISOString().slice(0, 10);
+      const key = localDateKey(cur);
       allWeeks.push({
         label: (cur.getMonth() + 1) + '/' + cur.getDate(),
         releases: weeks[key] ? weeks[key].releases : 0,
