@@ -76,7 +76,7 @@ footer a:hover { text-decoration: underline; }
 <div class="container">
 <header>
   <h1>Claude Code Changelog</h1>
-  <div class="meta">Current: v2.1.148 | Updated: 2026-05-22 11:05 JST | 3030 entries across 294 versions</div>
+  <div class="meta">Current: v2.1.149 | Updated: 2026-05-23 08:05 JST | 3056 entries across 295 versions</div>
 </header>
 
 <!-- Release Frequency Chart -->
@@ -93,27 +93,273 @@ footer a:hover { text-decoration: underline; }
     <canvas id="freq-chart"></canvas>
   </div>
   
-  <div style="font-size:0.78rem;color:var(--text2);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">→ 直近4週: 21リリース・540変更点（週平均135件） — 12週前比 1.1倍で安定推移</div>
+  <div style="font-size:0.78rem;color:var(--text2);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">→ 直近4週: 22リリース・566変更点（週平均142件） — 12週前比 1.1倍で安定推移</div>
   
 </div>
 
 <div class="filters">
   <button class="filter-btn active" data-cat="all">All</button>
   
-  <button class="filter-btn" data-cat="new_feature">★ 新機能 (639)</button>
+  <button class="filter-btn" data-cat="new_feature">★ 新機能 (641)</button>
   
-  <button class="filter-btn" data-cat="improvement">↑ 改善 (274)</button>
+  <button class="filter-btn" data-cat="improvement">↑ 改善 (275)</button>
   
-  <button class="filter-btn" data-cat="bug_fix">● バグ修正 (1470)</button>
+  <button class="filter-btn" data-cat="bug_fix">● バグ修正 (1490)</button>
   
   <button class="filter-btn" data-cat="performance">⚡ パフォーマンス (171)</button>
   
-  <button class="filter-btn" data-cat="other">· その他 (476)</button>
+  <button class="filter-btn" data-cat="other">· その他 (479)</button>
   
 </div>
 
 
-<div class="version open" data-version="2.1.148">
+<div class="version open" data-version="2.1.149">
+  <div class="version-header">
+    <h2>v2.1.149</h2>
+    <span class="release-date">2026-05-23 03:27 JST</span>
+    <span class="count">26 changes</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+  <div class="version-body">
+    
+    <div class="entry high" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Enterprise: added the `allowAllClaudeAiMcps` managed setting to load claude.ai cloud MCP connectors alongside `managed-mcp.json`
+        <span class="ja">Enterprise：`allowAllClaudeAiMcps`設定を追加し、`managed-mcp.json`に加えてclaude.aiのクラウドMCPコネクタを読み込めるようにしました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        `/usage` now shows a per-category breakdown of what&#39;s driving your limits usage — skills, subagents, plugins, and per-MCP-server cost
+        <span class="ja">`/usage`にて、制限使用量の内訳（スキル、サブエージェント、プラグイン、MCPサーバーごとのコスト）を表示するようにしました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        `/diff` detail view can now be scrolled with the keyboard (arrows, `j`/`k`, `PgUp`/`PgDn`, `Space`, `Home`/`End`)
+        <span class="ja">`/diff`の詳細ビューをキーボード（矢印キー、`j`/`k`、`PgUp`/`PgDn`、`Space`、`Home`/`End`）でスクロール可能にしました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Markdown output now renders GFM task list checkboxes (`- [ ] todo` / `- [x] done`) instead of plain bullets
+        <span class="ja">Markdown出力で、箇条書きの代わりにGFMタスクリスト（`- [ ]` / `- [x]`）をレンダリングするようにしました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Fixed Ctrl+O transcript view freezing at the moment it was opened instead of tailing new messages
+        <span class="ja">Ctrl+Oのトランスクリプト表示が、開いた瞬間の状態でフリーズし、新しいメッセージを追跡しない問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved `/feedback` reports to include the conversation that happened before context compaction, making issues from earlier in long sessions easier to triage
+        <span class="ja">`/feedback`レポートを改善し、コンテキスト圧縮前の会話を含めることで、長いセッションの初期段階の問題をトリアージしやすくしました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a PowerShell permission bypass: built-in `cd` functions (`cd..`, `cd\`, `cd~`, `X:`) changed the working directory undetected, letting a later command read outside the workspace
+        <span class="ja">PowerShellの権限バイパスを修正：組み込みの`cd`関数が検知されずに作業ディレクトリを変更し、後のコマンドがワークスペース外を読み取れる不具合を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the sandbox write allowlist in git worktrees covering the entire main repository root instead of only the shared `.git` directory (with `hooks/` and `config` denied)
+        <span class="ja">Sandboxの書き込み許可リストがgit worktreeのルート全体をカバーしていた不具合を修正し、共有`.git`ディレクトリのみ（`hooks/`と`config`は拒否）に制限しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed PowerShell prefix/wildcard allow rules (e.g. `PowerShell(dotnet.exe build *)`) not pre-approving native executables and scripts
+        <span class="ja">PowerShellのプレフィックス/ワイルドカード許可ルール（例: `PowerShell(dotnet.exe build *)`）がネイティブ実行ファイルやスクリプトを事前承認しない不具合を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a permission-analysis gap where the parser trusted stale variable-tracking values for `PWD`/`OLDPWD`/`DIRSTACK` across `cd`/`pushd`/`popd`
+        <span class="ja">パーミッション分析の漏れを修正：`cd`/`pushd`/`popd`実行時に`PWD`/`OLDPWD`/`DIRSTACK`の変数追跡値が古い状態のまま信頼されていた問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `find` in the Bash tool exhausting the macOS system file/vnode table and crashing the host on large directory trees
+        <span class="ja">Bashツールの`find`コマンドが大規模なディレクトリツリーでmacOSのシステムファイル/vnodeテーブルを使い果たし、ホストがクラッシュする問題を修正しました。</span>
+        <span class="platforms">[macos]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the managed-settings approval dialog leaving the terminal frozen after accepting at startup
+        <span class="ja">起動時にManaged-settingsの承認ダイアログを承諾した後、ターミナルがフリーズする問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `/ultraplan` and remote session creation failing with &#34;Could not capture uncommitted changes&#34; when the working tree has no real changes
+        <span class="ja">作業ツリーに変更がない場合に、`/ultraplan`やリモートセッション作成が「Could not capture uncommitted changes」で失敗する問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `otelHeadersHelper` failing silently when the script path contains spaces; helper failures are now reported in `/doctor` and the debug log
+        <span class="ja">スクリプトパスにスペースが含まれると`otelHeadersHelper`がサイレントで失敗する問題を修正し、エラーを`/doctor`とデバッグログに報告するようにしました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the thinking spinner staying amber across tool calls and onto fresh thinking bursts
+        <span class="ja">Thinking中のスピナーがツール呼び出しをまたいで、新しいThinkingバーストまで黄色いままになる問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed collapsed Bash output reporting the wrong hidden-line count for outputs with many short lines
+        <span class="ja">折りたたまれたBash出力において、短い行が多数ある場合に誤った非表示行数が報告される問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed slash-command argument-hint clipping trailing typed characters when the hint overflows the input box
+        <span class="ja">スラッシュコマンドの引数ヒントが入力ボックスからはみ出した際、末尾の入力文字が切り捨てられる問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed argument-hint and progressive arg suggestions not appearing after Tab-completing a skill whose frontmatter `name:` differs from its directory basename
+        <span class="ja">スキルの`name:`フロントマターがディレクトリ名と異なる場合、Tab補完後に引数ヒントや推奨事項が表示されない問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the status bar showing the user&#39;s baseline `/effort` setting instead of the effort level applied by skill/agent `effort:` frontmatter
+        <span class="ja">ステータスバーがスキルやエージェントの`effort:`フロントマターの設定ではなく、ユーザーの基本設定`/effort`を表示していた問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed editing a recalled prompt-history entry losing the edit when navigating further up/down with arrow keys
+        <span class="ja">プロンプト履歴で呼び出したエントリを編集後、矢印キーで上下移動すると編集内容が失われる問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `/config` exit summary reporting phantom changes to auto-compact and theme when toggling unrelated settings
+        <span class="ja">`/config`の終了サマリーで、無関係な設定を切り替えた際に自動圧縮やテーマの変更が誤って報告される問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `/insights` crashing when cached session-meta files are missing optional fields
+        <span class="ja">キャッシュされたセッションメタファイルにオプション項目がない場合に`/insights`がクラッシュする問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed malformed PowerShell and History tool calls with missing input being misclassified as reads in transcript collapsing
+        <span class="ja">入力項目が欠落している不正なPowerShell/Historyツール呼び出しが、トランスクリプトの折りたたみ時に読み取りと誤分類される問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed renaming a Remote Control session from claude.ai or the Claude mobile app not updating the local session name for `claude --resume`
+        <span class="ja">claude.aiやClaudeモバイルアプリからリモートセッション名を変更しても、`claude --resume`用のローカルセッション名が更新されない問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a race where a just-submitted prompt could appear twice in the up-arrow history
+        <span class="ja">送信直後のプロンプトが上矢印キーの履歴に二重に表示されるレースコンディションを修正しました。</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed tapping the &#34;Jump to bottom&#34; pill in fullscreen mode not dismissing it immediately
+        <span class="ja">フルスクリーンモードで「下にジャンプ」ボタンをタップしてもすぐに消えない問題を修正しました。</span>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="version" data-version="2.1.148">
   <div class="version-header">
     <h2>v2.1.148</h2>
     <span class="release-date">2026-05-22 09:10 JST</span>
@@ -126,7 +372,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Fixed the Bash tool returning exit code 127 on every command for some users (a regression introduced in 2.1.147)
-        <span class="ja">一部のユーザーでBashツールがコマンドごとに終了コード127を返す不具合を修正（2.1.147で発生したリグレッション）</span>
+        <span class="ja">一部のユーザーにおいてBashツールが常に終了コード127を返す問題を修正しました（v2.1.147でのリグレッション）。</span>
         
       </div>
     </div>
@@ -147,7 +393,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
       <div class="text">
         Pinned background sessions (`Ctrl+T` in `claude agents`) now stay alive when idle, are restarted in place to apply Claude Code updates, and are shed under memory pressure only after non-pinned sessions
-        <span class="ja">ピン留めしたバックグラウンドセッション（claude agentsでCtrl+T）はアイドル時も維持され、更新時はその場で再起動し、メモリ不足時も非ピン留めセッションより優先して保持されます</span>
+        <span class="ja">ピン留めされたバックグラウンドセッション（`claude agents`の`Ctrl+T`）は、アイドル時も維持され、アップデート適用時にその場で再起動し、メモリ圧迫時は非ピン留めセッションより後に終了するようにしました。</span>
         
       </div>
     </div>
@@ -156,7 +402,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Renamed `/simplify` to `/code-review`. It now reports correctness bugs at a chosen effort level (e.g., `/code-review high`); pass `--comment` to post findings as inline GitHub PR comments. The old cleanup-and-fix behavior has been removed
-        <span class="ja">`/simplify`を`/code-review`に名称変更。指定した強度で正当性のバグを報告（例: `/code-review high`）。`--comment`でGitHub PRのインラインコメントとして投稿可能。従来のクリーンアップと修正機能は削除されました</span>
+        <span class="ja">`/simplify`を`/code-review`に改名しました。設定した努力レベル（例：`/code-review high`）に基づきバグを検出し、`--comment`でGitHubのPRへインラインコメントとして投稿可能です。従来のクリーンアップ・修正機能は削除しました。</span>
         
       </div>
     </div>
@@ -165,7 +411,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved auto-updater: retries transient network failures, reports specific error categories and OS error codes on failure, and shows the current version when an update fails
-        <span class="ja">自動アップデーターを改善：一時的なネットワークエラーの再試行、エラーカテゴリとOSエラーコードの表示、更新失敗時のバージョン表示を追加</span>
+        <span class="ja">自動アップデーターを改善：一時的なネットワーク失敗のリトライ、詳細なエラーカテゴリとOSエラーコードの報告、更新失敗時の現在バージョン表示を追加しました。</span>
         
       </div>
     </div>
@@ -183,7 +429,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Prompt history no longer records consecutive duplicate entries — recalling a prompt with arrow-up and submitting it again won&#39;t add another copy
-        <span class="ja">プロンプト履歴で連続する重複入力を記録しないように修正（↑キーでの呼び出しと再送信時にコピーが作成されません）</span>
+        <span class="ja">プロンプト履歴で連続する重複入力を記録しないように変更（↑キーで呼び出したプロンプトを再送信してもコピーが追加されない）</span>
         
       </div>
     </div>
@@ -192,7 +438,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Fixed slash commands followed by a tab or newline being treated as an unknown command
-        <span class="ja">スラッシュコマンドの後にタブや改行が続くと不明なコマンドとして扱われる問題を修正</span>
+        <span class="ja">スラッシュコマンドの後にタブや改行が続く場合に不明なコマンドとして扱われる問題を修正</span>
         
       </div>
     </div>
@@ -201,7 +447,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed enterprise login restrictions (`forceLoginOrgUUID` and `forceLoginMethod` managed-settings) not being enforced against third-party-provider and API-key sessions
-        <span class="ja">企業向けログイン制限（managed-settingsの`forceLoginOrgUUID`と`forceLoginMethod`）が、サードパーティプロバイダーやAPIキーセッションに適用されない不具合を修正</span>
+        <span class="ja">エンタープライズログイン制限（`forceLoginOrgUUID`および`forceLoginMethod`管理設定）がサードパーティプロバイダーやAPIキーのセッションに適用されない問題を修正</span>
         
       </div>
     </div>
@@ -210,7 +456,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `&amp;` in `!` command output displaying as `&amp;amp;`, which broke copy-pasting URLs from commands like `gcloud auth login` on headless machines
-        <span class="ja">`!`コマンド出力内の`&amp;`が`&amp;amp;`と表示され、ヘッドレス環境で`gcloud auth login`等のURLコピー＆ペーストが失敗する問題を修正</span>
+        <span class="ja">`!`コマンド出力内の`&amp;`が`&amp;amp;`と表示され、headless環境で`gcloud auth login`等のURLをコピー＆ペーストできない問題を修正</span>
         
       </div>
     </div>
@@ -219,7 +465,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed unknown slash commands silently doing nothing in headless/SDK mode — they now show an error message
-        <span class="ja">ヘッドレス/SDKモードで不明なスラッシュコマンドが何も反応しない問題を修正（エラーメッセージを表示するように変更）</span>
+        <span class="ja">headless/SDKモードで不明なスラッシュコマンドを実行した際に何も起こらない問題を修正（エラーメッセージを表示するように変更）</span>
         
       </div>
     </div>
@@ -228,7 +474,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/help` rendering a broken tab header and showing only one command per page on small terminals when not in fullscreen mode
-        <span class="ja">小さなターミナルの非フルスクリーンモードで、`/help`のタブヘッダーが崩れ、1ページに1コマンドしか表示されない問題を修正</span>
+        <span class="ja">小さなターミナルかつフルスクリーンモードでない場合に、`/help`が壊れたタブヘッダーを表示し、1ページあたり1コマンドしか表示されない問題を修正</span>
         
       </div>
     </div>
@@ -237,7 +483,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed shell snapshot dropping user functions whose names start with a single underscore, which broke aliases referencing them
-        <span class="ja">シェルスナップショットでアンダースコアから始まるユーザー関数が削除され、それを参照するエイリアスが機能しない問題を修正</span>
+        <span class="ja">シェルスナップショットでアンダースコア1つで始まるユーザー関数が削除され、それを参照するエイリアスが機能しなくなる問題を修正</span>
         
       </div>
     </div>
@@ -246,7 +492,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugin agents that declare multiple `Agent(...)` types in `tools:` frontmatter dropping all but the last entry
-        <span class="ja">`tools:`フロントマターで複数の`Agent(...)`型を宣言するプラグインエージェントで、最後以外が無視される問題を修正</span>
+        <span class="ja">`tools:` frontmatterで複数の`Agent(...)`タイプを宣言したプラグインエージェントが、最後のエントリ以外を削除してしまう問題を修正</span>
         
       </div>
     </div>
@@ -255,7 +501,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed hook `if` conditions like `PowerShell(git push*)` never matching — only `PowerShell(*)` worked
-        <span class="ja">`PowerShell(git push*)`などのフックの`if`条件が一致しない問題を修正（`PowerShell(*)`のみ有効だった不具合）</span>
+        <span class="ja">`PowerShell(git push*)`のようなフックの`if`条件がマッチせず、`PowerShell(*)`のみ有効だった問題を修正</span>
         
       </div>
     </div>
@@ -264,7 +510,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed PowerShell tool dropping output for commands that rely on the default formatter
-        <span class="ja">PowerShellツールがデフォルトフォーマッタに依存するコマンドの出力を欠落させる問題を修正</span>
+        <span class="ja">PowerShellツールがデフォルトのフォーマッタに依存するコマンドの出力を破棄する問題を修正</span>
         
       </div>
     </div>
@@ -273,7 +519,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed: on Windows, &#34;Yes, and don&#39;t ask again&#34; for a PowerShell script invocation now writes a rule that actually matches on subsequent runs
-        <span class="ja">WindowsでPowerShellスクリプト実行時の「はい、今後確認しない」が、次回以降も正しく適用されるようにルールを修正</span>
+        <span class="ja">WindowsでPowerShellスクリプト実行時の「Yes, and don&#39;t ask again」が、後続の実行で正しくマッチするルールを書き込むように修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -282,7 +528,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed PowerShell tool failing on Windows with exit code 1 when `pwsh` is installed via winget or the Microsoft Store
-        <span class="ja">wingetやMicrosoft Store経由で`pwsh`をインストールした際、WindowsでPowerShellツールが終了コード1で失敗する問題を修正</span>
+        <span class="ja">Windows環境で`winget`またはMicrosoft Store経由でインストールされた`pwsh`を使用するとPowerShellツールが終了コード1で失敗する問題を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -291,7 +537,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/effort` opening with the slider on the wrong level — it now starts at your current effort
-        <span class="ja">`/effort`が誤ったレベルのスライダーで開く問題を修正（現在の設定レベルで開始されます）</span>
+        <span class="ja">`/effort`のスライダーが誤ったレベルで開く問題を修正（現在のレベルから開始するように変更）</span>
         
       </div>
     </div>
@@ -300,7 +546,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed paginating MCP servers dropping resources, templates, and prompts past page 1
-        <span class="ja">MCPサーバーのページネーションで、2ページ目以降のリソース、テンプレート、プロンプトが欠落する問題を修正</span>
+        <span class="ja">MCPサーバーのページネーションで、2ページ目以降のリソース、テンプレート、プロンプトが削除される問題を修正</span>
         
       </div>
     </div>
@@ -309,7 +555,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed full-screen strobing in attached background sessions on Windows Terminal while Claude is streaming
-        <span class="ja">Windows TerminalでClaudeがストリーミング中に、アタッチされたバックグラウンドセッションで画面が点滅する問題を修正</span>
+        <span class="ja">Windows Terminalでのバックグラウンドセッション実行中、Claudeのストリーミングに合わせて画面が点滅する問題を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -318,7 +564,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed: on Windows, removing a background-job worktree no longer follows NTFS junctions into the main repo
-        <span class="ja">Windowsでバックグラウンドジョブの作業ツリーを削除する際、NTFSジャンクションを追跡しないように修正</span>
+        <span class="ja">Windowsでバックグラウンドジョブのワークツリーを削除する際、NTFSジャンクションを辿ってメインリポジトリまで削除してしまう問題を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -327,7 +573,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/background` refusing sessions whose only typed input was a skill or custom slash command
-        <span class="ja">スキルやカスタムスラッシュコマンドのみを入力したセッションを、`/background`が拒否する問題を修正</span>
+        <span class="ja">スキルやカスタムスラッシュコマンドのみを入力したセッションで、`/background`が機能しない問題を修正</span>
         
       </div>
     </div>
@@ -336,7 +582,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed auto mode suppressing `AskUserQuestion` when the user or a skill explicitly relies on it; the auto-mode classifier now sees the user&#39;s answers as intent signal
-        <span class="ja">オートモードで`AskUserQuestion`が抑制される問題を修正（ユーザーの回答を意図として認識するように変更）</span>
+        <span class="ja">自動モードで`AskUserQuestion`が抑制される問題を修正。ユーザーやスキルが依存する場合、ユーザーの回答を意図信号として認識するように変更</span>
         
       </div>
     </div>
@@ -345,7 +591,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/theme` &#34;New custom theme&#34; and color editor dialogs not responding to Esc
-        <span class="ja">`/theme`の「New custom theme」およびカラーエディターダイアログでEscキーが反応しない問題を修正</span>
+        <span class="ja">`/theme`の「New custom theme」およびカラーエディターのダイアログがEscキーに応答しない問題を修正</span>
         
       </div>
     </div>
@@ -354,7 +600,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed an uncaught exception at the end of streaming sessions when running via the Agent SDK
-        <span class="ja">Agent SDK経由で実行したストリーミングセッション終了時に捕捉されない例外が発生する問題を修正</span>
+        <span class="ja">Agent SDK経由で実行したストリーミングセッションの終了時にキャッチされない例外が発生する問題を修正</span>
         
       </div>
     </div>
@@ -363,7 +609,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a rare hang when waiting for scroll to settle on Windows
-        <span class="ja">Windowsでスクロールの停止待ち時に稀にハングする問題を修正</span>
+        <span class="ja">Windowsでスクロール停止待ち時に稀にハングする問題を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -372,7 +618,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed stale and doubled rows in the agent view list on Windows when background session results contain wide (CJK) characters
-        <span class="ja">Windowsでバックグラウンドセッションの結果にワイド文字（CJK）が含まれると、エージェント一覧の表示が古くなったり重複したりする問題を修正</span>
+        <span class="ja">Windowsでバックグラウンドセッションの結果に全角（CJK）文字が含まれる場合、エージェント一覧の行が古くなったり重複したりする問題を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -381,7 +627,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed pasted text being delivered to agents as an unreadable `[Pasted text #N]` placeholder instead of the actual content
-        <span class="ja">ペーストしたテキストがエージェントに実内容ではなく`[Pasted text #N]`と表示される問題を修正</span>
+        <span class="ja">ペーストしたテキストが実際のコンテンツではなく`[Pasted text #N]`という読み取り不能なプレースホルダーとしてエージェントに配信される問題を修正</span>
         
       </div>
     </div>
@@ -390,7 +636,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugin component counts in `claude plugin details` and `/plugin` being doubled when a plugin&#39;s manifest listed paths overlapping its default directories
-        <span class="ja">プラグインのマニフェストでパスがデフォルトディレクトリと重複する場合、`claude plugin details`や`/plugin`でのコンポーネント数が倍増する問題を修正</span>
+        <span class="ja">プラグインのマニフェストパスがデフォルトディレクトリと重複している場合に、`claude plugin details`および`/plugin`でのプラグインコンポーネント数が倍増する問題を修正</span>
         
       </div>
     </div>
@@ -399,7 +645,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed backgrounded sessions re-prompting for tool permissions you already granted with &#34;don&#39;t ask again&#34;
-        <span class="ja">バックグラウンドセッションが「今後確認しない」で許可済みのツール権限を再要求する問題を修正</span>
+        <span class="ja">バックグラウンドセッションで「don&#39;t ask again」を付与したはずのツール権限を再要求される問題を修正</span>
         
       </div>
     </div>
@@ -408,7 +654,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed GNOME Terminal right-click and middle-click paste not inserting text
-        <span class="ja">GNOME Terminalで右クリックや中クリックの貼り付けがテキストを挿入しない問題を修正</span>
+        <span class="ja">GNOME Terminalで右クリックおよび中クリックによる貼り付けが機能しない問題を修正</span>
         
       </div>
     </div>
@@ -417,7 +663,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `CLAUDE_CODE_SUBAGENT_MODEL` not applying to teammate processes spawned by agent teams
-        <span class="ja">エージェントチームが生成するサブエージェントプロセスに `CLAUDE_CODE_SUBAGENT_MODEL` が適用されない問題を修正</span>
+        <span class="ja">エージェントチームによって生成されたteammateプロセスに`CLAUDE_CODE_SUBAGENT_MODEL`が適用されない問題を修正</span>
         
       </div>
     </div>
@@ -426,7 +672,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed several spacing and layout glitches in the `/plugin`, `/status`, `/mobile`, `/sandbox`, and `/permissions` menus
-        <span class="ja">`/plugin`、`/status`、`/mobile`、`/sandbox`、`/permissions` メニューにおける間隔やレイアウトの不具合を複数修正</span>
+        <span class="ja">`/plugin`、`/status`、`/mobile`、`/sandbox`、`/permissions`メニューにおける間隔やレイアウトの不具合を修正</span>
         
       </div>
     </div>
@@ -435,7 +681,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed stripped images prompting the model to repeatedly re-read media that was no longer present
-        <span class="ja">画像が削除された際に、モデルが削除済みのメディアを繰り返し読み込もうとする問題を修正</span>
+        <span class="ja">画像が削除された後も、存在しないメディアをモデルに繰り返し読み込ませようとする問題を修正</span>
         
       </div>
     </div>
@@ -456,7 +702,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `claude agents --json` to list live Claude sessions as JSON for scripting (tmux-resurrect, status bars, session pickers)
-        <span class="ja">スクリプト（tmux-resurrect、ステータスバー、セッションピッカーなど）用に `claude agents --json` でライブセッションをJSON形式でリスト化する機能を追加</span>
+        <span class="ja">スクリプト用（tmux-resurrect、ステータスバー、セッションピッカー等）に、実行中のClaudeセッションをJSON形式で一覧表示する `claude agents --json` を追加</span>
         
       </div>
     </div>
@@ -465,7 +711,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `agent_id` and `parent_agent_id` attributes to `claude_code.tool` OTEL spans, and fixed trace parenting so background subagent spans nest under the dispatching Agent tool span
-        <span class="ja">`claude_code.tool` OTELスパンに `agent_id` および `parent_agent_id` 属性を追加し、サブエージェントのスパンがディスパッチ元のAgentツールスパン配下にネストされるようトレースの親子関係を修正</span>
+        <span class="ja">`claude_code.tool` のOTELスパンに `agent_id` と `parent_agent_id` 属性を追加し、バックグラウンドのサブエージェントスパンがディスパッチ元のAgentツールスパン配下にネストされるようトレースの親子関係を修正</span>
         
       </div>
     </div>
@@ -483,7 +729,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/plugin` Discover and Browse screens now show a plugin&#39;s commands, agents, skills, hooks, and MCP/LSP servers before installation
-        <span class="ja">`/plugin` のDiscover/Browse画面で、インストール前にプラグインのコマンド、エージェント、スキル、フック、MCP/LSPサーバーを表示するように改善</span>
+        <span class="ja">`/plugin` のDiscover/Browse画面にて、インストール前にプラグインのコマンド、エージェント、スキル、フック、MCP/LSPサーバーを表示するように改善</span>
         
       </div>
     </div>
@@ -492,7 +738,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude agents` terminal tab title now shows the awaiting-input count so an alt-tabbed window tells you when an agent needs attention
-        <span class="ja">`claude agents` のターミナルタブのタイトルに入力待ちカウントを表示し、Alt-Tab切り替え時にエージェントの介入が必要か確認可能に</span>
+        <span class="ja">`claude agents` のターミナルタブのタイトルに待機中の入力数を表示し、Alt-Tabで切り替えた際にエージェントの要求状況が分かるように変更</span>
         
       </div>
     </div>
@@ -501,7 +747,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Slash command and @-mention suggestion list now supports mouse hover and click in fullscreen mode
-        <span class="ja">フルスクリーンモードでのスラッシュコマンドと@-mentionの候補リストで、マウスホバーとクリック操作に対応</span>
+        <span class="ja">スラッシュコマンドと@-mentionのサジェストリストで、フルスクリーンモード時のマウスホバーとクリック操作に対応</span>
         
       </div>
     </div>
@@ -519,7 +765,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved the Read tool to return a truncated first page with a &#34;PARTIAL view&#34; notice instead of a hard error when a whole-file read exceeds the token limit
-        <span class="ja">ファイル全体の読み取りがトークン制限を超えた場合、ハードエラーを返す代わりに「PARTIAL view」通知付きで最初のページを切り詰めて返すよう改善</span>
+        <span class="ja">ファイル全体を読み込む際にトークン制限を超えた場合、ハードエラーを返す代わりに「PARTIAL view」の通知付きで最初のページを切り詰めて返すよう改善</span>
         
       </div>
     </div>
@@ -528,7 +774,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a permission-prompt bypass where bare variable assignments to non-allowlisted environment variables in Bash commands were auto-approved
-        <span class="ja">Bashコマンド内で許可リスト外の環境変数へ直接代入した際に、権限プロンプトがバイパスされて自動承認される問題を修正</span>
+        <span class="ja">Bashコマンド実行時、許可リスト外の環境変数への変数代入が自動承認されてしまう権限プロンプトのバイパス問題を修正</span>
         
       </div>
     </div>
@@ -537,7 +783,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed MCP prompt slash commands showing raw server validation errors when a required argument is omitted — the error now names the missing argument and shows expected usage
-        <span class="ja">必須引数が省略されたMCPプロンプトのスラッシュコマンドで、生のサーバーバリデーションエラーではなく、不足している引数名と使用方法を表示するように修正</span>
+        <span class="ja">MCPプロンプトのスラッシュコマンドで必須引数が不足している際、生のサーバーバリデーションエラーではなく、不足している引数名と正しい使用方法を表示するように修正</span>
         
       </div>
     </div>
@@ -546,7 +792,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed the spinner and elapsed-time display freezing until a keypress after the terminal was resized or refocused
-        <span class="ja">ターミナルのリサイズやフォーカス時に、スピナーや経過時間の表示がキー入力まで停止する問題を修正</span>
+        <span class="ja">ターミナルのリサイズやフォーカス切り替え後に、スピナーと経過時間の表示がキー入力まで停止する問題を修正</span>
         
       </div>
     </div>
@@ -555,7 +801,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed the cross-project resume hint failing in default Windows PowerShell 5.1 — Windows now uses `;` as the command separator
-        <span class="ja">Windows PowerShell 5.1でクロスプロジェクトのレジュームヒントが機能しない問題を修正（コマンド区切り文字として `;` を使用）</span>
+        <span class="ja">デフォルトのWindows PowerShell 5.1でクロスプロジェクトのresumeヒントが機能しない問題を修正（Windowsのコマンド区切り文字を `;` に変更）</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -564,7 +810,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed voice push-to-talk not working in the agent view&#39;s reply pane
-        <span class="ja">エージェントビューの返信ペインで、音声のプッシュ・トゥ・トークが動作しない問題を修正</span>
+        <span class="ja">エージェントビューの返信ペインでプッシュ・ツー・トーク（音声入力）が機能しない問題を修正</span>
         
       </div>
     </div>
@@ -573,7 +819,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed task lists rendering in random order when several tasks are created at once
-        <span class="ja">タスクが一度に複数作成された際に、タスクリストの表示順がランダムになる問題を修正</span>
+        <span class="ja">複数のタスクを同時に作成した際、タスクリストがランダムな順序でレンダリングされる問題を修正</span>
         
       </div>
     </div>
@@ -582,7 +828,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed stale &#34;Failed to install Anthropic marketplace&#34; banner showing when the marketplace is already installed
-        <span class="ja">マーケットプレイスがインストール済みでも「Failed to install Anthropic marketplace」バナーが表示され続ける問題を修正</span>
+        <span class="ja">Anthropic marketplaceがインストール済みにもかかわらず、古い「インストールに失敗しました」というバナーが表示される問題を修正</span>
         
       </div>
     </div>
@@ -600,7 +846,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Agent Teams teammates with non-ASCII names failing every API call due to invalid header encoding
-        <span class="ja">非ASCII名を持つエージェントチームのメンバーが、不正なヘッダーエンコーディングによりすべてのAPIコールで失敗する問題を修正</span>
+        <span class="ja">Agent Teamsで非ASCII文字を含む名前のメンバーが、不正なヘッダーエンコーディングにより全てのAPIコールで失敗する問題を修正</span>
         
       </div>
     </div>
@@ -609,7 +855,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/review` using a deprecated `projectCards` GraphQL query that errored on repos with Classic Projects
-        <span class="ja">`/review` で非推奨の `projectCards` GraphQLクエリが使用され、Classic Projectsを利用しているリポジトリでエラーになる問題を修正</span>
+        <span class="ja">`/review` が非推奨の `projectCards` GraphQLクエリを使用しており、Classic Projectsを含むリポジトリでエラーになる問題を修正</span>
         
       </div>
     </div>
@@ -618,7 +864,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude plugin validate` not flagging `skills:` entries that point at a file instead of a directory — the error now suggests the parent directory
-        <span class="ja">`claude plugin validate` で、ディレクトリではなくファイルを指す `skills:` エントリがフラグされない問題を修正（親ディレクトリを提案するように変更）</span>
+        <span class="ja">`claude plugin validate` で、ディレクトリではなくファイルを指定した `skills:` エントリがフラグされない問題を修正（親ディレクトリを推奨するように変更）</span>
         
       </div>
     </div>
@@ -627,7 +873,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed an infinite loop where a skill using `context: fork` could repeatedly re-invoke itself instead of running
-        <span class="ja">`context: fork` を使用したスキルが、実行されずに自身を無限に再呼び出しする問題を修正</span>
+        <span class="ja">`context: fork` を使用したスキルが、実行されずに自分自身を繰り返し呼び出してしまう無限ループ問題を修正</span>
         
       </div>
     </div>
@@ -648,7 +894,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `/resume` support for background sessions — sessions started via `claude --bg` or agent view now appear alongside interactive ones, marked with `bg`
-        <span class="ja">バックグラウンドセッション向けの `/resume` サポートを追加（`claude --bg` やエージェントビュー経由で開始されたセッションが `bg` 表記でインタラクティブセッションと並んで表示）</span>
+        <span class="ja">バックグラウンドセッションに `/resume` サポートを追加（`claude --bg` やエージェントビューで開始されたセッションが、インタラクティブセッションと並んで `bg` 表記で表示される）</span>
         
       </div>
     </div>
@@ -657,7 +903,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added elapsed duration to background subagent completion notifications (e.g. &#34;Agent completed · 3h 2m 5s&#34;)
-        <span class="ja">バックグラウンドサブエージェントの完了通知に経過時間を追加（例：「Agent completed · 3h 2m 5s」）</span>
+        <span class="ja">バックグラウンドのサブエージェント完了通知に経過時間を追加（例: &#34;Agent completed · 3h 2m 5s&#34;）</span>
         
       </div>
     </div>
@@ -666,7 +912,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         The `/plugin` browse and discover panes now show when a plugin was last updated
-        <span class="ja">`/plugin` のBrowseおよびDiscoverペインに、プラグインの最終更新日を表示</span>
+        <span class="ja">`/plugin` のBrowseおよびDiscoverペインで、プラグインの最終更新日を表示するように変更</span>
         
       </div>
     </div>
@@ -675,7 +921,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         `/model` now changes the model for the current session only; press `d` in the model picker to set a default for new sessions
-        <span class="ja">`/model` は現在のセッションのみのモデルを変更するように変更（モデルピッカーで `d` を押すと新規セッションのデフォルトを設定可能）</span>
+        <span class="ja">`/model` で現在のセッションのみモデルを変更可能に改善（モデルピッカーで `d` を押すと新規セッションのデフォルトを設定可能）</span>
         
       </div>
     </div>
@@ -684,7 +930,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Renamed &#34;extra usage&#34; to &#34;usage credits&#34; across CLI copy; `/extra-usage` is now `/usage-credits` (old name still works)
-        <span class="ja">CLIのコピー全体で「extra usage」を「usage credits」に名称変更（`/extra-usage` は引き続き `/usage-credits` として動作）</span>
+        <span class="ja">CLI上の表記を「extra usage」から「usage credits」に変更し、`/extra-usage` を `/usage-credits` に変更（旧コマンドも引き続き利用可能）</span>
         
       </div>
     </div>
@@ -693,7 +939,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Reduced terminal rendering glitches in VS Code by reducing spinner animation color count
-        <span class="ja">スピナーアニメーションの色数を削減し、VS Codeでのターミナル描画の不具合を低減</span>
+        <span class="ja">スピナーアニメーションのカラー数を減らし、VS Codeでのターミナルレンダリングの不具合を低減</span>
         
       </div>
     </div>
@@ -702,7 +948,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Fewer spurious tool errors during search: `head`/`tail` file views now satisfy the read-before-edit check, and a &#34;no matches&#34; result (exit code 1) from `egrep`, `fgrep`, `git grep`, or `git diff` is no longer reported as a command failure
-        <span class="ja">検索時の不要なツールエラーを削減。`head`/`tail`の読み込みチェックを改善し、`grep`等の「一致なし（終了コード1）」をコマンド失敗として扱わないよう変更</span>
+        <span class="ja">検索時の不要なツールエラーを削減：`head`/`tail`のファイル表示を編集前チェックの対象とし、`egrep`等の「一致なし（終了コード1）」をコマンド失敗と見なさないように修正</span>
         
       </div>
     </div>
@@ -711,7 +957,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Resumed sessions now keep the model they were using instead of picking up another session&#39;s `/model` choice
-        <span class="ja">セッション再開時、他のセッションの `/model` 設定を引き継がず、使用していたモデルを保持するように修正</span>
+        <span class="ja">セッション再開時に別のセッションの `/model` 設定を引き継がず、元のモデルを保持するように修正</span>
         
       </div>
     </div>
@@ -720,7 +966,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         `/bg` and `←`-detach now preserve directories added via `/add-dir`
-        <span class="ja">`/bg` および `←` によるデタッチ時に、`/add-dir` で追加されたディレクトリ設定を保持するように修正</span>
+        <span class="ja">`/bg` および `←` によるデタッチ時に `/add-dir` で追加したディレクトリを保持するように変更</span>
         
       </div>
     </div>
@@ -729,7 +975,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude agents` / `--bg` rejection messages now name the specific gate (non-TTY, env var, or setting) instead of a generic message
-        <span class="ja">`claude agents` / `--bg` の拒否メッセージを汎用的なものから、特定のゲート（non-TTY、環境変数、設定）を明示するものに変更</span>
+        <span class="ja">`claude agents` や `--bg` の拒否メッセージを、汎用的なものではなく具体的な制限理由（非TTY、環境変数、設定など）を示すように変更</span>
         
       </div>
     </div>
@@ -738,7 +984,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude --bg --name &lt;label&gt;` now echoes the name in the post-spawn confirmation
-        <span class="ja">`claude --bg --name &lt;label&gt;` の起動確認メッセージで、指定した名前を表示するように変更</span>
+        <span class="ja">`claude --bg --name &lt;label&gt;` が起動確認時に名前を表示するようになりました</span>
         
       </div>
     </div>
@@ -747,7 +993,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         `claude agents`: renaming a background session with Ctrl+R now updates the attached session&#39;s banner immediately
-        <span class="ja">`claude agents`: Ctrl+Rでバックグラウンドセッションの名前を変更した際、アタッチセッションのバナーが即座に更新されるよう修正</span>
+        <span class="ja">`claude agents`: Ctrl+Rでのバックグラウンドセッション名変更が、接続中のセッションバナーに即時反映されるようになりました</span>
         
       </div>
     </div>
@@ -756,7 +1002,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Background session worktree isolation guard now applies for non-git VCS users with `WorktreeCreate` hooks configured
-        <span class="ja">バックグラウンドセッションのワークツリー分離保護を、`WorktreeCreate`フックを設定済みの非Git VCSユーザーにも適用</span>
+        <span class="ja">非Git VCSユーザーが`WorktreeCreate`フックを設定している場合、バックグラウンドセッションのワークツリー隔離ガードが適用されるようになりました</span>
         
       </div>
     </div>
@@ -765,7 +1011,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Plugin marketplace add/update now respects `CLAUDE_CODE_PLUGIN_PREFER_HTTPS`
-        <span class="ja">プラグインの追加/更新時に `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` 設定を尊重するように修正</span>
+        <span class="ja">プラグインの追加/更新が`CLAUDE_CODE_PLUGIN_PREFER_HTTPS`を尊重するようになりました</span>
         
       </div>
     </div>
@@ -774,7 +1020,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/plugin` now returns to the Installed list after enabling, disabling, or uninstalling a plugin
-        <span class="ja">`/plugin` でプラグインの有効化・無効化・アンインストール実行後、Installedリストへ戻るように修正</span>
+        <span class="ja">`/plugin`でプラグインの有効化・無効化・アンインストール後に「インストール済み」リストへ戻るようになりました</span>
         
       </div>
     </div>
@@ -783,7 +1029,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/doctor` now shows an exec-form example when a command hook is missing the `command` field
-        <span class="ja">`/doctor` でコマンドフックの `command` フィールドが欠落している場合、exec形式の例を表示するように修正</span>
+        <span class="ja">`/doctor`が`command`フィールドを欠くコマンドフックに対し、exec形式の例を表示するようになりました</span>
         
       </div>
     </div>
@@ -792,7 +1038,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Skill-listing truncation is no longer shown as a startup notification — run `/doctor` for the full breakdown
-        <span class="ja">スキルリストの省略通知をスタートアップ時に表示しないように変更（詳細な内訳は `/doctor` で確認可能）</span>
+        <span class="ja">スキルリストの省略通知を廃止しました（詳細は`/doctor`で確認してください）</span>
         
       </div>
     </div>
@@ -801,7 +1047,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved recovery from rare pre-response stream stalls — now retries streaming once instead of falling back to a slower non-streaming request
-        <span class="ja">レスポンスストリーム停止時の回復を改善。非ストリーミングリクエストへの切り替え前に、一度ストリーミングを再試行するように変更</span>
+        <span class="ja">レスポンスストリーム停止からの復旧を改善し、低速な非ストリーミングリクエストへ切り替える前に1度ストリームを再試行するようになりました</span>
         
       </div>
     </div>
@@ -810,7 +1056,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
       <div class="text">
         Improved SDK/headless MCP startup: pre-wait now overlaps startup instead of blocking before the first turn (up to 2s faster with slow MCP servers)
-        <span class="ja">SDK/headless MCPの起動を改善。起動前の待機を事前実行と重ねることで、低速なMCPサーバー使用時に最大2秒高速化</span>
+        <span class="ja">SDK/headless MCPの起動を改善：プレウェイトを起動処理と並行させ、初回ターン前の待機を削除（低速なMCPサーバーで最大2秒高速化）</span>
         
       </div>
     </div>
@@ -819,7 +1065,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         The post-survey follow-up hint now appears after every non-dismiss survey response with context-aware copy, making it easier to share more detail via /feedback.
-        <span class="ja">アンケート回答後に表示されるフォローアップヒントを、文脈に応じた内容に更新し、`/feedback` で詳細を共有しやすく改善</span>
+        <span class="ja">アンケート回答後にコンテキストに応じた`/feedback`へのヒントを表示し、詳細を共有しやすくしました</span>
         
       </div>
     </div>
@@ -828,7 +1074,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed startup hanging up to 75s when `api.anthropic.com` is unreachable (captive portal, firewall, VPN issues) — side-channel API calls now time out after 15s
-        <span class="ja">`api.anthropic.com` に到達できない場合（キャプティブポータル、ファイアウォール、VPNの問題など）に最大75秒間ハングする問題を修正し、サイドチャネルのAPI呼び出しを15秒でタイムアウトするように変更</span>
+        <span class="ja">`api.anthropic.com` に到達できない場合（キャプティブポータル、ファイアウォール、VPN等）、起動が最大75秒間停止する問題を修正（サイドチャネルAPIコールは15秒でタイムアウトするように変更）</span>
         
       </div>
     </div>
@@ -837,7 +1083,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed garbled terminal output after a missed window-resize event (e.g. dragging a VS Code split-pane divider) — now self-heals on the next frame instead of requiring Ctrl+L
-        <span class="ja">ウィンドウリサイズ時のターミナル表示崩れを修正。次回フレームで自動修復されるよう改善（Ctrl+Lは不要）</span>
+        <span class="ja">ウィンドウリサイズ時（VS Codeの分割ペイン移動等）にターミナルの出力が崩れる問題を修正し、Ctrl+Lを不要にして次フレームで自己修復するように変更</span>
         
       </div>
     </div>
@@ -846,7 +1092,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed progressive terminal display corruption (stale/garbled glyphs) that could appear in very long sessions and only cleared on terminal resize or restart
-        <span class="ja">長時間セッションで発生するターミナル表示の不具合（古いグリフの残存）を修正</span>
+        <span class="ja">長時間セッションでターミナルの表示が徐々に崩れる（古いグリフが残る）問題を修正</span>
         
       </div>
     </div>
@@ -855,7 +1101,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed macOS background sessions crashing with &#34;exit 1 before init&#34; when the project lives under a Full Disk Access-protected folder (regression in 2.1.143)
-        <span class="ja">Full Disk Accessで保護されたフォルダ内のプロジェクトで、macOSのバックグラウンドセッションが起動時にクラッシュする問題を修正（v2.1.143の不具合）</span>
+        <span class="ja">macOSにて、プロジェクトがフルディスクアクセス保護されたフォルダ配下にある場合、バックグラウンドセッションが &#34;exit 1 before init&#34; でクラッシュする問題を修正（2.1.143の回帰）</span>
         <span class="platforms">[macos]</span>
       </div>
     </div>
@@ -864,7 +1110,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed an unrecoverable conversation when reading a file whose image extension doesn&#39;t match its contents (e.g. HTML saved as .png) — now falls back to text
-        <span class="ja">画像拡張子が内容と一致しないファイル（例：.pngとして保存されたHTML）の読み込み失敗を修正し、テキストとして処理するように改善</span>
+        <span class="ja">拡張子と内容が不一致な画像ファイルを読み込むと会話が復元不能になる問題を修正し、テキストとしてフォールバックするように変更</span>
         
       </div>
     </div>
@@ -873,7 +1119,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/branch` failing with &#34;No conversation to branch&#34; after entering a worktree or in some background sessions
-        <span class="ja">ワークツリーや一部のバックグラウンドセッションで `/branch` が失敗する問題を修正</span>
+        <span class="ja">worktreeへの移動時や一部のバックグラウンドセッションで `/branch` が失敗する問題を修正</span>
         
       </div>
     </div>
@@ -882,7 +1128,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed pressing Escape in the AskUserQuestion notes field aborting the turn instead of returning to answer selection
-        <span class="ja">AskUserQuestionの入力フィールドでEscapeキーを押した際、回答選択に戻らずにターンが中断される問題を修正</span>
+        <span class="ja">AskUserQuestionのノート欄でEscキーを押すと回答選択に戻らず終了してしまう問題を修正</span>
         
       </div>
     </div>
@@ -891,7 +1137,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed model selection not applying when changed via the IDE model picker or `applyFlagSettings` after startup
-        <span class="ja">起動後にIDEのモデル選択や `applyFlagSettings` でモデルを変更しても反映されない問題を修正</span>
+        <span class="ja">起動後にIDEモデルピッカーや `applyFlagSettings` でモデルを変更しても適用されない問題を修正</span>
         
       </div>
     </div>
@@ -900,7 +1146,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Bedrock and Vertex users unable to select &#34;Opus (1M context)&#34; from the `/model` picker (regression in v2.1.129)
-        <span class="ja">BedrockおよびVertexユーザーが `/model` から「Opus (1M context)」を選択できない問題を修正（v2.1.129の不具合）</span>
+        <span class="ja">BedrockおよびVertexユーザーが `/model` ピッカーで「Opus (1M context)」を選択できない問題を修正（v2.1.129の回帰）</span>
         
       </div>
     </div>
@@ -909,7 +1155,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed remote-session login failing with &#34;Can&#39;t access this organization&#34; for users with `forceLoginMethod` and `forceLoginOrgUUID` set
-        <span class="ja">`forceLoginMethod` 等の設定があるユーザーで、リモートセッションへのログイン時に組織アクセスエラーが発生する問題を修正</span>
+        <span class="ja">`forceLoginMethod` 等が設定されている場合にリモートセッションのログインで「組織にアクセスできません」と表示される問題を修正</span>
         
       </div>
     </div>
@@ -918,7 +1164,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed MCP servers with paginated `tools/list` responses only returning the first page, silently dropping tools
-        <span class="ja">MCPサーバーのページネーションされた `tools/list` レスポンスで、2ページ目以降のツールが無視される問題を修正</span>
+        <span class="ja">MCPサーバーのページネーションされた `tools/list` 応答で、最初のページしか返されずツールが欠落する問題を修正</span>
         
       </div>
     </div>
@@ -927,7 +1173,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed MCP images with unsupported MIME types (e.g. SVG) breaking the conversation — now saved to disk and referenced in the tool result
-        <span class="ja">サポート外のMIMEタイプ（SVG等）を含むMCP画像を読み込むと会話が壊れる問題を修正し、ディスク保存して参照するように変更</span>
+        <span class="ja">サポート外のMIMEタイプ（SVG等）を持つMCP画像で会話が中断される問題を修正し、ディスク保存と参照を行うように変更</span>
         
       </div>
     </div>
@@ -936,7 +1182,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed file descriptor exhaustion when a build runs inside a skill directory — non-`.md` files no longer trigger skill reloads
-        <span class="ja">スキルディレクトリ内でのビルド時にファイルディスクリプタが枯渇する問題を修正。非.mdファイルではスキルを再読み込みしないよう改善</span>
+        <span class="ja">スキルディレクトリ内でのビルド時にファイルディスクリプタが枯渇する問題を修正し、.md以外のファイルでスキル再読み込みが発生しないように変更</span>
         
       </div>
     </div>
@@ -945,7 +1191,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed session title being generated from plugin monitor output instead of the user&#39;s first prompt
-        <span class="ja">セッションタイトルがユーザーの最初のプロンプトではなく、プラグイン監視出力から生成される問題を修正</span>
+        <span class="ja">セッションタイトルがユーザーの最初のプロンプトではなく、プラグインモニターの出力から生成される問題を修正</span>
         
       </div>
     </div>
@@ -954,7 +1200,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Skill tool failing with permission error in headless mode (regression in v2.1.141)
-        <span class="ja">ヘッドレスモードでSkillツールがパーミッションエラーで失敗する問題を修正（v2.1.141の不具合）</span>
+        <span class="ja">headlessモードでSkillツールが権限エラーで失敗する問題を修正（v2.1.141の回帰）</span>
         
       </div>
     </div>
@@ -963,7 +1209,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugins enabled in your own settings showing &#34;not cached&#34; errors after first load on a fresh machine; plugins enabled only by a project&#39;s `.claude/settings.json` now show an actionable `claude plugin install` hint
-        <span class="ja">新規環境での初回読み込み時にプラグインが「not cached」エラーとなる問題を修正。プロジェクト設定で有効化したプラグインにインストールヒントを表示</span>
+        <span class="ja">新規マシンで設定済みプラグインが「キャッシュなし」エラーになる問題を修正し、プロジェクト固有の設定で有効な場合に `claude plugin install` のヒントを表示するように変更</span>
         
       </div>
     </div>
@@ -972,7 +1218,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude mcp list` silently reporting no servers when `.mcp.json` can&#39;t be parsed (e.g. using VS Code&#39;s `&#34;servers&#34;` key instead of `&#34;mcpServers&#34;`) — now shows configuration errors
-        <span class="ja">`.mcp.json` のパース失敗時（`&#34;servers&#34;`キー使用時など）にサーバー一覧が空と表示される問題を修正し、設定エラーを表示するように変更</span>
+        <span class="ja">`.mcp.json` の解析失敗時（キー名間違い等）にサーバーなしと報告される問題を修正し、設定エラーを表示するように変更</span>
         
       </div>
     </div>
@@ -981,7 +1227,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background side-queries on custom `ANTHROPIC_BASE_URL` setups and Bedrock Mantle not using Haiku — now falls back correctly when a first-party API key is configured or no Haiku model is set
-        <span class="ja">`ANTHROPIC_BASE_URL` やBedrock Mantle環境でのバックグラウンドクエリがHaikuモデルを使用しない問題を修正</span>
+        <span class="ja">カスタム `ANTHROPIC_BASE_URL` やBedrock Mantle環境でのバックグラウンドクエリでHaikuが使われない問題を修正し、適切にフォールバックするように変更</span>
         
       </div>
     </div>
@@ -990,7 +1236,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed scrolling in attached background sessions on Windows — PgUp/PgDn, mouse wheel, and Ctrl+O transcript navigation now work
-        <span class="ja">Windowsのバックグラウンドセッションにおけるスクロール（PgUp/PgDn、マウスホイール、Ctrl+Oでのナビゲーション）を修正</span>
+        <span class="ja">Windowsのバックグラウンドセッションでスクロールが効かない問題を修正（PgUp/PgDn、マウスホイール、Ctrl+Oでの移動に対応）</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -999,7 +1245,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a crash when closing the terminal while attached to a background session
-        <span class="ja">バックグラウンドセッション接続中にターミナルを閉じるとクラッシュする問題を修正</span>
+        <span class="ja">バックグラウンドセッションにアタッチ中にターミナルを閉じるとクラッシュする問題を修正</span>
         
       </div>
     </div>
@@ -1008,7 +1254,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed on Windows, pressing ← in `claude agents` leaving the list unresponsive to keyboard input
-        <span class="ja">Windowsで `claude agents` 実行中に左矢印キーを押すとキー入力が効かなくなる問題を修正</span>
+        <span class="ja">Windowsの `claude agents` で左矢印キーを押すとキーボード入力が反応しなくなる問題を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1017,7 +1263,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed ghost characters at the left edge when switching panes in Agent View on Windows Terminal with CJK content
-        <span class="ja">Windows TerminalでCJK文字を含むAgent Viewのペイン切り替え時に左端にゴースト文字が表示される問題を修正</span>
+        <span class="ja">Windows TerminalでCJKコンテンツを表示中にペインを切り替えると左端に不要な文字が表示される問題を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1026,7 +1272,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Edit/Write refusing with &#34;background session hasn&#39;t isolated its changes yet&#34; right after detaching a session that was already editing in place
-        <span class="ja">インプレース編集中のセッションをデタッチした直後にEdit/Writeを実行すると「まだ変更が隔離されていない」として拒否される問題を修正</span>
+        <span class="ja">インプレース編集中のセッションをデタッチした直後にEdit/Writeが拒否される問題を修正</span>
         
       </div>
     </div>
@@ -1035,7 +1281,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude respawn &lt;id&gt;` on a stopped background session showing &#34;stopped&#34; instead of running
-        <span class="ja">停止中のバックグラウンドセッションに対して `claude respawn &lt;id&gt;` を実行した際、「停止中」と表示される問題を修正</span>
+        <span class="ja">停止したバックグラウンドセッションに対して `claude respawn &lt;id&gt;` を実行すると「実行中」ではなく「停止」と表示される問題を修正</span>
         
       </div>
     </div>
@@ -1044,7 +1290,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/resume` picker not showing sessions forked from a background session
-        <span class="ja">`/resume` ピッカーで、バックグラウンドセッションからフォークされたセッションが表示されない問題を修正</span>
+        <span class="ja">バックグラウンドセッションからフォークされたセッションが `/resume` ピッカーに表示されない問題を修正</span>
         
       </div>
     </div>
@@ -1053,7 +1299,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed opening a session from `claude agents` or running `claude logs &lt;id&gt;` hanging when the background service is unresponsive — now times out after 10s with a recovery hint
-        <span class="ja">バックグラウンドサービスが応答しない際、`claude agents` や `claude logs &lt;id&gt;` がハングする問題を修正し、10秒後にタイムアウトと復旧ヒントを表示</span>
+        <span class="ja">バックグラウンドサービスが応答しない場合に `claude agents` や `claude logs &lt;id&gt;` がハングする問題を修正し、10秒でタイムアウトして回復ヒントを表示するように変更</span>
         
       </div>
     </div>
@@ -1062,7 +1308,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background Bash tasks spawned by subagents staying &#34;Running&#34; in SDK task panels after the process exits
-        <span class="ja">サブエージェントが生成したバックグラウンドのBashタスクが、終了後もSDKタスクパネルで「実行中」と表示され続ける問題を修正</span>
+        <span class="ja">プロセス終了後もサブエージェントが生成したバックグラウンドBashタスクがSDKタスクパネルで「実行中」のままになる問題を修正</span>
         
       </div>
     </div>
@@ -1071,7 +1317,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed completed or stopped background sessions briefly failing to wake being permanently marked as a startup crash
-        <span class="ja">完了または停止したバックグラウンドセッションが復帰時に一時的に失敗し、スタートアップクラッシュと誤判定される問題を修正</span>
+        <span class="ja">完了または停止したバックグラウンドセッションの復帰失敗が、永続的な起動時クラッシュとしてマークされる問題を修正</span>
         
       </div>
     </div>
@@ -1080,7 +1326,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed markdown links in `claude agents` attached sessions rendering as plain text instead of clickable hyperlinks
-        <span class="ja">`claude agents` アタッチセッション内のMarkdownリンクがクリック可能なハイパーリンクではなくプレーンテキストで表示される問題を修正</span>
+        <span class="ja">`claude agents` でアタッチしたセッション内のマークダウンリンクがクリック可能なリンクにならずプレーンテキストになる問題を修正</span>
         
       </div>
     </div>
@@ -1089,7 +1335,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed custom `spinnerVerbs` applying to the post-turn duration message — past-tense built-ins like &#34;Worked for 5s&#34; are restored there
-        <span class="ja">カスタム `spinnerVerbs` が完了時の所要時間メッセージに適用されていた問題を修正。「Worked for 5s」のような過去形の組み込み表現を復元</span>
+        <span class="ja">カスタム `spinnerVerbs` がターン後の経過時間メッセージに適用される問題を修正し、過去形の組み込みメッセージを復元</span>
         
       </div>
     </div>
@@ -1110,7 +1356,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `worktree.bgIsolation: &#34;none&#34;` setting to let background sessions edit the working copy directly without `EnterWorktree`, for repos where worktrees are impractical
-        <span class="ja">`worktree.bgIsolation: &#34;none&#34;` 設定を追加。ワークツリーが不適なリポジトリ用に、`EnterWorktree` なしで直接作業コピーを編集可能に</span>
+        <span class="ja">`worktree.bgIsolation: &#34;none&#34;`設定を追加：ワークツリーが使えないリポジトリ向けに、`EnterWorktree`なしで作業コピーを直接編集可能にしました</span>
         
       </div>
     </div>
@@ -1119,7 +1365,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added plugin dependency enforcement: `claude plugin disable` now refuses when another enabled plugin depends on the target (with a copy-pasteable disable-chain hint), and `claude plugin enable` force-enables transitive dependencies
-        <span class="ja">プラグインの依存関係強制を追加。依存する有効なプラグインがある場合に無効化を拒否し、有効化時に依存関係を強制有効化</span>
+        <span class="ja">プラグインの依存関係を強化：依存先がある場合の無効化を拒否（解除チェーンを表示）し、有効化時に依存先も強制有効化するようになりました</span>
         
       </div>
     </div>
@@ -1128,7 +1374,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added projected context cost (per-turn and per-invocation token estimates) to the `/plugin` marketplace browse pane
-        <span class="ja">`/plugin` マーケットプレイスの閲覧画面に、推定コンテキストコスト（ターンごとおよび呼び出しごとのトークン見積もり）を追加</span>
+        <span class="ja">`/plugin`マーケットプレイスの閲覧パネルに、予測コンテキストコスト（ターンおよび呼び出しごとのトークン見積もり）を追加しました</span>
         
       </div>
     </div>
@@ -1137,7 +1383,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         PowerShell tool now passes `-ExecutionPolicy Bypass`. Opt out with `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1`
-        <span class="ja">PowerShellツールが `-ExecutionPolicy Bypass` を渡すように変更。`CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1` で無効化可能</span>
+        <span class="ja">PowerShellツールが`-ExecutionPolicy Bypass`を渡すようになりました（`CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1`で無効化可能）</span>
         
       </div>
     </div>
@@ -1146,7 +1392,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Background sessions now preserve the model and effort level you set after waking from idle
-        <span class="ja">バックグラウンドセッションがアイドル状態から復帰後、設定されたモデルと努力レベルを保持するように修正</span>
+        <span class="ja">バックグラウンドセッションがアイドル復帰後もモデルとEffortレベルを保持するようになりました</span>
         
       </div>
     </div>
@@ -1155,7 +1401,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Shift+Tab in attached agent sessions now includes auto mode in the cycle
-        <span class="ja">アタッチされたエージェントセッションで Shift+Tab のサイクリングにautoモードを含めるように変更</span>
+        <span class="ja">接続中エージェントセッションでのShift+Tabによる切り替えにautoモードを含めました</span>
         
       </div>
     </div>
@@ -1164,7 +1410,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         The PowerShell tool is now enabled by default on Windows for Bedrock, Vertex, and Foundry users. Opt out with `CLAUDE_CODE_USE_POWERSHELL_TOOL=0`.
-        <span class="ja">Bedrock、Vertex、Foundryユーザー向けにWindowsでPowerShellツールを標準有効化（`CLAUDE_CODE_USE_POWERSHELL_TOOL=0`で無効化可能）</span>
+        <span class="ja">WindowsでBedrock, Vertex, Foundryユーザー向けにPowerShellツールをデフォルトで有効化しました（`CLAUDE_CODE_USE_POWERSHELL_TOOL=0`で無効化可能）</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1173,7 +1419,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude agents` now accepts `--add-dir`, `--settings`, `--mcp-config`, and `--plugin-dir` and applies them to the dashboard and to background sessions dispatched from it
-        <span class="ja">`claude agents` で `--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir` を指定し、ダッシュボードやそこから起動するセッションに適用可能に</span>
+        <span class="ja">`claude agents`が`--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir`に対応し、ダッシュボードおよびそこから起動するバックグラウンドセッションに適用可能になりました。</span>
         
       </div>
     </div>
@@ -1182,7 +1428,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude agents` accepts `--permission-mode`, `--model`, `--effort`, and `--dangerously-skip-permissions` to set defaults for sessions dispatched from the view
-        <span class="ja">`claude agents` で `--permission-mode`、`--model`、`--effort`、`--dangerously-skip-permissions` を使用し、起動セッションのデフォルト設定が可能に</span>
+        <span class="ja">`claude agents`が`--permission-mode`、`--model`、`--effort`、`--dangerously-skip-permissions`に対応し、表示画面から起動するセッションのデフォルト値を設定可能になりました。</span>
         
       </div>
     </div>
@@ -1191,7 +1437,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude --bg --dangerously-skip-permissions` now persists across retire→wake
-        <span class="ja">`claude --bg --dangerously-skip-permissions` の設定がスリープ復帰後も保持されるように修正</span>
+        <span class="ja">`claude --bg --dangerously-skip-permissions`の設定が、retire→wakeの間も保持されるようになりました。</span>
         
       </div>
     </div>
@@ -1200,7 +1446,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Worktree cleanup no longer falls back to `rm -rf` when `git worktree remove` fails, preventing loss of gitignored or in-progress files
-        <span class="ja">`git worktree remove` 失敗時に `rm -rf` を実行しないようにし、gitignoredや作業中のファイルの消失を防止</span>
+        <span class="ja">Worktreeのクリーンアップで`git worktree remove`失敗時に`rm -rf`へフォールバックしないようにし、gitignoredファイルや作業中のファイルの消失を防止しました。</span>
         
       </div>
     </div>
@@ -1209,7 +1455,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/bg` now preserves `--mcp-config`, `--settings`, `--add-dir`, `--plugin-dir`, and `--strict-mcp-config`, so backgrounded sessions keep their MCP servers and settings across respawn.
-        <span class="ja">`/bg` で `--mcp-config` 等のオプション設定を保持し、セッション再起動時もMCPサーバー等の設定を維持</span>
+        <span class="ja">`/bg`が`--mcp-config`や`--settings`等の引数を保持するようにし、セッション再起動時もMCPサーバー設定が維持されるようにしました。</span>
         
       </div>
     </div>
@@ -1218,7 +1464,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Background sessions launched from `claude agents` now honor `permissions.defaultMode` from settings.json (was previously overridden to auto mode)
-        <span class="ja">`claude agents` から起動したバックグラウンドセッションで settings.json の `permissions.defaultMode` を尊重するように修正</span>
+        <span class="ja">`claude agents`から起動するバックグラウンドセッションが、settings.jsonの`permissions.defaultMode`を尊重するように修正しました（以前はautoモードに上書きされていました）。</span>
         
       </div>
     </div>
@@ -1227,7 +1473,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/bg` and `←`-detach now preserve `--fallback-model`, so backgrounded workers degrade to the fallback model on overload instead of hard-failing.
-        <span class="ja">`/bg` および ← によるデタッチ時、`--fallback-model` を保持し、負荷時にフォールバックへ適切に切り替わるよう改善</span>
+        <span class="ja">`/bg`と←によるデタッチ時に`--fallback-model`が保持され、負荷増大時にフォールバックモデルへ移行するように修正しました。</span>
         
       </div>
     </div>
@@ -1236,7 +1482,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/bg` and `←`-detach now preserve `--allow-dangerously-skip-permissions`, so the forked worker keeps bypass-permissions available in its Shift+Tab cycle.
-        <span class="ja">`/bg` および ← によるデタッチ時、`--allow-dangerously-skip-permissions` を保持し、Shift+Tabでの権限スキップを継続可能に</span>
+        <span class="ja">`/bg`と←によるデタッチ時に`--allow-dangerously-skip-permissions`が保持され、フォークされたワーカーで権限バイパスが継続利用できるようにしました。</span>
         
       </div>
     </div>
@@ -1245,7 +1491,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Fixed: background daemon spawn now falls back to the running binary when the `~/.local/bin/claude` launcher is missing or non-executable
-        <span class="ja">`~/.local/bin/claude` が見つからない場合に実行中のバイナリへフォールバックするように修正</span>
+        <span class="ja">`~/.local/bin/claude`ランチャーが見つからない場合、実行中のバイナリを使用するように修正しました。</span>
         
       </div>
     </div>
@@ -1254,7 +1500,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a corrupt `.credentials.json` with a non-array `scopes` value hanging the CLI on startup or silently aborting OAuth token refresh
-        <span class="ja">`.credentials.json` の `scopes` が配列以外で破損している際にCLIが起動時にハングするかOAuth更新が失敗する問題を修正</span>
+        <span class="ja">`.credentials.json`の`scopes`が配列でない場合にCLIが起動不能またはOAuthリフレッシュに失敗する問題を修正しました</span>
         
       </div>
     </div>
@@ -1263,7 +1509,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed right-click paste in `claude agents` on Windows Terminal and WSL
-        <span class="ja">Windows TerminalおよびWSLの `claude agents` で右クリックペーストができない問題を修正</span>
+        <span class="ja">Windows TerminalおよびWSLでの`claude agents`における右クリックペーストを修正しました</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1272,7 +1518,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed stop hooks that block repeatedly looping forever — the turn now ends with a warning after 8 consecutive blocks (override via `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP`)
-        <span class="ja">ストップフックがループを繰り返す問題を修正。8回連続でブロックされた場合、警告を表示してターンを終了するように制限（`CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` で上書き可能）</span>
+        <span class="ja">stopフックの無限ループを修正：8回連続でブロックされた場合、警告を出してターンを終了するようにしました（`CLAUDE_CODE_STOP_HOOK_BLOCK_CAP`で設定可能）</span>
         
       </div>
     </div>
@@ -1281,7 +1527,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Esc/Ctrl+C not cancelling a pending `/loop` wakeup while Claude is idle between iterations
-        <span class="ja">Claudeが反復間でアイドル状態の際に、Esc/Ctrl+Cで保留中の `/loop` 復帰をキャンセルできない問題を修正</span>
+        <span class="ja">Claudeが反復間でアイドル状態の際、Esc/Ctrl+Cで保留中の`/loop`ウェイクアップをキャンセルできない問題を修正しました</span>
         
       </div>
     </div>
@@ -1290,7 +1536,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/goal` evaluator firing while background shells or delegated subagents are still running
-        <span class="ja">バックグラウンドシェルや委任されたサブエージェントの実行中に `/goal` エバリュエーターが起動する問題を修正</span>
+        <span class="ja">バックグラウンドシェルや委任されたサブエージェントの実行中に`/goal`評価器が動作する問題を修正しました</span>
         
       </div>
     </div>
@@ -1299,7 +1545,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `NO_COLOR`/`FORCE_COLOR` in settings.json `env` stripping Claude Code&#39;s own UI colors — they now apply to subprocesses only
-        <span class="ja">settings.json の `env` で `NO_COLOR`/`FORCE_COLOR` を設定した際、Claude Code自体のUI色が消える問題を修正。サブプロセスのみに適用されるように変更</span>
+        <span class="ja">settings.jsonの`env`で`NO_COLOR`/`FORCE_COLOR`がClaude Code自身のUI色を除去する問題を修正（サブプロセスのみに適用されるようにしました）</span>
         
       </div>
     </div>
@@ -1308,7 +1554,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed agent view spawning repeated PowerShell processes on Windows when listing sessions
-        <span class="ja">Windowsでエージェントビューからセッション一覧を表示する際、PowerShellプロセスが重複して起動する問題を修正</span>
+        <span class="ja">Windowsのエージェントビューでセッション一覧を表示する際、PowerShellプロセスが重複して起動する問題を修正しました</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1317,7 +1563,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/bg` without a prompt sending &#34;continue&#34; to the forked session — the fork now waits for input
-        <span class="ja">`/bg` でプロンプトなしの場合にフォーク先セッションへ「continue」が送信される問題を修正。フォーク先で入力を待機するように変更</span>
+        <span class="ja">プロンプトなしの`/bg`でフォークされたセッションに&#34;continue&#34;が送信される問題を修正（入力待ちになるように変更）</span>
         
       </div>
     </div>
@@ -1326,7 +1572,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `--agent &lt;name&gt;` not finding plugin-contributed agents without the `plugin:` prefix
-        <span class="ja">`--agent &lt;name&gt;` で `plugin:` プレフィックスなしのプラグイン由来エージェントが見つからない問題を修正</span>
+        <span class="ja">`--agent &lt;name&gt;`が`plugin:`プレフィックスなしでプラグイン提供エージェントを見つけられない問題を修正しました</span>
         
       </div>
     </div>
@@ -1335,7 +1581,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed deleting a session from agent view not removing its transcript file
-        <span class="ja">エージェントビューからセッションを削除した際、対応するトランスクリプトファイルが削除されない問題を修正</span>
+        <span class="ja">エージェントビューからのセッション削除でトランスクリプトファイルが残る問題を修正しました</span>
         
       </div>
     </div>
@@ -1344,7 +1590,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed stale-fragment rendering when scrolling in attached background sessions on Windows Terminal
-        <span class="ja">Windows Terminalでバックグラウンドセッション接続時にスクロールすると描画が乱れる不具合を修正</span>
+        <span class="ja">Windows Terminalの接続中バックグラウンドセッションでスクロール時にフラグメントが残る問題を修正しました</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1353,7 +1599,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background agents false-positive worker-stall detection storm after host sleep or macOS App Nap
-        <span class="ja">ホストのスリープやmacOSのApp Nap後にバックグラウンドエージェントが誤ってワーカースタールの検知を繰り返す問題を修正</span>
+        <span class="ja">ホストのスリープやmacOS App Nap後に、バックグラウンドエージェントが誤ってワーカー停止を検出する問題を修正しました</span>
         <span class="platforms">[macos]</span>
       </div>
     </div>
@@ -1362,7 +1608,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed 5xx error messages pointing at status.claude.com instead of naming the configured gateway or cloud provider
-        <span class="ja">5xxエラー時に設定したゲートウェイやクラウドプロバイダー名ではなく status.claude.com を参照していた問題を修正</span>
+        <span class="ja">5xxエラー時に、設定済みのゲートウェイやクラウドプロバイダーではなくstatus.claude.comを指す問題を修正しました</span>
         
       </div>
     </div>
@@ -1371,7 +1617,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background sessions silently capturing IDE file references into the warm spare&#39;s input, which caused the reference to be prepended to the next prompt dispatched from `claude agents`
-        <span class="ja">バックグラウンドセッションがIDEのファイル参照を誤って取得し、次のプロンプトの先頭に付与される問題を修正</span>
+        <span class="ja">バックグラウンドセッションがIDEのファイル参照を予期せず取得し、次のプロンプトの先頭に付与されていた問題を修正しました。</span>
         
       </div>
     </div>
@@ -1380,7 +1626,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background-job sessions on macOS getting &#34;Operation not permitted&#34; errors when reading files under `~/Documents`, `~/Desktop`, or `~/Downloads`, even with Full Disk Access granted.
-        <span class="ja">macOSでフルディスクアクセスを許可しても `~/Documents` 等の読み取り時に「Operation not permitted」が発生する問題を修正</span>
+        <span class="ja">macOSにて、フルディスクアクセスが許可されていても`~/Documents`等のファイル読み込み時に「Operation not permitted」エラーが発生する問題を修正しました。</span>
         <span class="platforms">[macos]</span>
       </div>
     </div>
@@ -1389,7 +1635,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed: on Windows, pressing ← in `claude agents` while a response was streaming could leave the agents list unresponsive to all input
-        <span class="ja">Windowsで `claude agents` の応答中に ← キーを押すとリストが操作不能になる不具合を修正</span>
+        <span class="ja">Windowsで`claude agents`のレスポンスストリーミング中に←キーを押すと入力が効かなくなる問題を修正しました。</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1398,7 +1644,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude agents --allow-dangerously-skip-permissions` defaulting dispatched sessions to bypass mode instead of making it available in the permission cycle
-        <span class="ja">`claude agents --allow-dangerously-skip-permissions` で起動したセッションが強制的にバイパスモードになる問題を修正</span>
+        <span class="ja">`claude agents --allow-dangerously-skip-permissions`で起動したセッションが、バイパスモードではなく許可サイクルで有効になるように修正しました。</span>
         
       </div>
     </div>
@@ -1419,7 +1665,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added new `claude agents` flags: `--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, and `--dangerously-skip-permissions` to configure dispatched background sessions
-        <span class="ja">`claude agents` にバックグラウンドセッション設定用のフラグを新規追加</span>
+        <span class="ja">`claude agents`にバックグラウンドセッション設定用の新フラグを追加しました（`--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, `--dangerously-skip-permissions`）。</span>
         
       </div>
     </div>
@@ -1428,7 +1674,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Fast mode now uses Opus 4.7 by default (previously Opus 4.6). Set `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1` to pin fast mode to Opus 4.6
-        <span class="ja">Fast modeのデフォルトモデルをOpus 4.7に変更（`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1`で4.6に固定可）</span>
+        <span class="ja">Fast modeのデフォルトをOpus 4.7に変更しました（`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1`で4.6に固定可能）。</span>
         
       </div>
     </div>
@@ -1437,7 +1683,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Plugins with a root-level `SKILL.md` and no `skills/` subdirectory are now surfaced as a skill
-        <span class="ja">ルートに `SKILL.md` を含み `skills/` サブディレクトリを持たないプラグインをスキルとして認識するように修正</span>
+        <span class="ja">ルートに`SKILL.md`があり`skills/`サブディレクトリがないプラグインが、スキルとして認識されるようになりました。</span>
         
       </div>
     </div>
@@ -1446,7 +1692,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         The `/plugin` details pane and `claude plugin details` now show LSP servers a plugin provides
-        <span class="ja">`/plugin` 詳細および `claude plugin details` でプラグインが提供するLSPサーバーを表示</span>
+        <span class="ja">`/plugin`詳細画面および`claude plugin details`で、プラグインが提供するLSPサーバーが表示されるようになりました。</span>
         
       </div>
     </div>
@@ -1455,7 +1701,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/web-setup` warns before replacing an existing GitHub App connection
-        <span class="ja">`/web-setup` で既存のGitHub App接続を置き換える際の警告を追加</span>
+        <span class="ja">`/web-setup`で既存のGitHub App接続を置き換える前に警告を表示するようにしました。</span>
         
       </div>
     </div>
@@ -1464,7 +1710,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Fixed `/plugin` browse pane showing &#34;0 installs&#34; for newly published plugins
-        <span class="ja">`/plugin` ブラウズペインで新規公開されたプラグインが「インストール0件」と表示される問題を修正</span>
+        <span class="ja">`/plugin` ブラウズペインで新規公開されたプラグインが「0 installs」と表示される問題を修正</span>
         
       </div>
     </div>
@@ -1473,7 +1719,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved reactive compaction: the first summarize attempt now seeds from the original request&#39;s overflow size, avoiding a wasted near-full-context retry
-        <span class="ja">リアクティブ圧縮の改善：初回要約時にリクエストのオーバーフローサイズをシードとして使用し、コンテキストほぼ全量の不要な再試行を回避</span>
+        <span class="ja">リアクティブな要約の改善：初回要約時に元のリクエストのオーバーフローサイズを基にするよう変更し、コンテキスト上限付近での無駄な再試行を回避</span>
         
       </div>
     </div>
@@ -1482,7 +1728,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved hook configuration error: configuring a prompt- or agent-type hook for `SessionStart`/`Setup`/`SubagentStart` now shows a clear &#34;use a command-type hook instead&#34; error
-        <span class="ja">フック設定エラーの改善：`SessionStart`/`Setup`/`SubagentStart` に prompt/agent 型のフックを設定すると「command 型を使用してください」と明示的にエラー表示</span>
+        <span class="ja">フック設定エラーの改善：`SessionStart`/`Setup`/`SubagentStart` にプロンプト型またはエージェント型のフックを設定した場合に「command型のフックを使用する」旨の明確なエラーを表示</span>
         
       </div>
     </div>
@@ -1491,7 +1737,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Removed stale `/model claude-sonnet-4-20250514` suggestion from Usage Policy refusal messages
-        <span class="ja">使用ポリシー拒否メッセージから古い `/model claude-sonnet-4-20250514` の提案を削除</span>
+        <span class="ja">Usage Policyの拒否メッセージから古くなった `/model claude-sonnet-4-20250514` の提案を削除</span>
         
       </div>
     </div>
@@ -1500,7 +1746,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `MCP_TOOL_TIMEOUT` not raising the per-request fetch timeout for remote HTTP and SSE MCP servers, which capped tool calls at 60 seconds regardless of the configured value
-        <span class="ja">`MCP_TOOL_TIMEOUT` がリモートHTTP/SSE MCPサーバーのタイムアウトに適用されない不具合を修正</span>
+        <span class="ja">`MCP_TOOL_TIMEOUT`がリモートMCPサーバーのフェッチタイムアウトに反映されず、ツール呼び出しが60秒で制限されていた問題を修正しました。</span>
         
       </div>
     </div>
@@ -1509,7 +1755,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background sessions not recognizing pre-existing git worktrees, blocking Edit while EnterWorktree refused to create a duplicate
-        <span class="ja">バックグラウンドセッションが既存のgit worktreeを認識できず、Editがブロックされる問題を修正</span>
+        <span class="ja">バックグラウンドセッションが既存のgit worktreeを認識できず、Editがブロックされる問題を修正しました。</span>
         
       </div>
     </div>
@@ -1518,7 +1764,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background sessions disappearing and daemon reconnect failing after macOS sleep/wake — the daemon now detects clock jumps instead of treating them as elapsed idle time
-        <span class="ja">macOSの睡眠復帰後にセッションが消滅・再接続失敗する問題を修正（クロックジャンプを検知するように改善）</span>
+        <span class="ja">macOSのスリープ解除後にバックグラウンドセッションが消失する問題を修正。デーモンが時刻のズレを検知するようにしました。</span>
         <span class="platforms">[macos]</span>
       </div>
     </div>
@@ -1527,7 +1773,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed daemon not exiting cleanly after the binary is upgraded (e.g. `brew upgrade`), causing dispatched agents to crash-loop on the deleted path
-        <span class="ja">バイナリ更新（`brew upgrade`等）後にデーモンが正常終了せずクラッシュループする不具合を修正</span>
+        <span class="ja">バイナリ更新（`brew upgrade`等）後にデーモンが正常終了せず、起動したエージェントがクラッシュループする問題を修正しました。</span>
         
       </div>
     </div>
@@ -1536,7 +1782,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background agents crash-looping when the Claude-in-Chrome extension is connected without a shared tab
-        <span class="ja">Claude-in-Chrome拡張機能が共有タブなしで接続された際にバックグラウンドエージェントがクラッシュする問題を修正</span>
+        <span class="ja">Claude-in-Chrome拡張機能が共有タブなしで接続されている場合に、バックグラウンドエージェントがクラッシュループする問題を修正しました。</span>
         
       </div>
     </div>
@@ -1545,7 +1791,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed clicking links in an attached `claude agents` session — the background worker&#39;s headless browser shim no longer applies while attached
-        <span class="ja">接続中の `claude agents` でリンクをクリックしてもheadless browser shimが誤作動しないように修正</span>
+        <span class="ja">`claude agents`セッションでリンクをクリックした際、アタッチ中にも関わらずヘッドレスブラウザのshimが適用される問題を修正しました。</span>
         
       </div>
     </div>
@@ -1554,7 +1800,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude agents` &#34;v to open in editor&#34; using the daemon&#39;s default editor instead of your shell&#39;s `$EDITOR`/`$VISUAL`
-        <span class="ja">`claude agents` の「v to open in editor」でシェルの `$EDITOR`/`$VISUAL` ではなくデーモンのデフォルトを使用していた問題を修正</span>
+        <span class="ja">`claude agents`の「vでエディタを開く」機能が、シェル環境の`$EDITOR`/`$VISUAL`ではなくデーモンのデフォルトエディタを使用していた問題を修正しました。</span>
         
       </div>
     </div>
@@ -1563,7 +1809,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude agents` deadlocking on Windows with network-drive working directories; Ctrl+C now works during startup
-        <span class="ja">Windowsでネットワークドライブを作業ディレクトリにした際にデッドロックする問題を修正（起動中のCtrl+Cに対応）</span>
+        <span class="ja">Windowsでネットワークドライブを作業ディレクトリにした際に`claude agents`がデッドロックする問題を修正しました。</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1572,7 +1818,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background-color bleed when attaching to a `claude agents` session from Apple Terminal or other 256-color-only terminals
-        <span class="ja">Apple Terminal等、256色のみの端末で `claude agents` セッション接続時に背景色がはみ出す問題を修正</span>
+        <span class="ja">Apple Terminal等の256色ターミナルに`claude agents`からアタッチした際の背景色の不具合を修正しました。</span>
         
       </div>
     </div>
@@ -1581,7 +1827,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude --bg --dangerously-skip-permissions` not persisting across retire/wake
-        <span class="ja">`claude --bg --dangerously-skip-permissions` が再開時に保持されない問題を修正</span>
+        <span class="ja">`claude --bg --dangerously-skip-permissions`の設定がretire/wakeを跨いで保持されない問題を修正しました。</span>
         
       </div>
     </div>
@@ -1590,7 +1836,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed session titles being derived from the URL when the first message is a link
-        <span class="ja">最初のメッセージがリンクの場合、セッションタイトルがURLから生成される問題を修正</span>
+        <span class="ja">最初のメッセージがリンクである場合に、URLからセッションタイトルが生成される問題を修正しました。</span>
         
       </div>
     </div>
@@ -1599,7 +1845,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed redundant `set_model` requests from remote clients injecting duplicate `/model` breadcrumbs into the transcript
-        <span class="ja">リモートクライアントからの冗長な `set_model` リクエストにより、トランスクリプトに重複した `/model` パンくずリストが挿入される問題を修正</span>
+        <span class="ja">リモートクライアントからの冗長な`set_model`リクエストにより、トランスクリプトに重複した`/model`パンくずリストが挿入される問題を修正しました。</span>
         
       </div>
     </div>
@@ -1608,7 +1854,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugins using `skills: [&#34;./&#34;]` showing a false &#34;path escapes plugin directory&#34; error
-        <span class="ja">`skills: [&#34;./&#34;]` を使用するプラグインで「パスがプラグインディレクトリから脱出している」という誤ったエラーが出る問題を修正</span>
+        <span class="ja">`skills: [&#34;./&#34;]` を使用するプラグインで「プラグインディレクトリ外へのパス」という誤ったエラーが表示される問題を修正</span>
         
       </div>
     </div>
@@ -1617,7 +1863,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugin cache cleanup deleting the active plugin version directory when no installation metadata is present
-        <span class="ja">インストールメタデータがない場合にプラグインのキャッシュ削除がアクティブなプラグインのバージョンディレクトリを削除してしまう問題を修正</span>
+        <span class="ja">インストールメタデータがない場合にプラグインキャッシュのクリーンアップがアクティブなバージョンディレクトリを削除してしまう問題を修正</span>
         
       </div>
     </div>
@@ -1626,7 +1872,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugin advisories not naming every `plugin.json` key that shadows a default folder
-        <span class="ja">プラグインの警告でデフォルトフォルダを隠蔽（shadow）する `plugin.json` キーがすべて列挙されない問題を修正</span>
+        <span class="ja">プラグインの警告でデフォルトフォルダーを隠蔽するすべての `plugin.json` キーが指摘されない問題を修正</span>
         
       </div>
     </div>
@@ -1647,7 +1893,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `terminalSequence` field to hook JSON output so hooks can emit desktop notifications, window titles, and bells without a controlling terminal
-        <span class="ja">フックのJSON出力に `terminalSequence` フィールドを追加し、制御端末なしでデスクトップ通知、ウィンドウタイトル、ベルの送信を可能に</span>
+        <span class="ja">フックのJSON出力に `terminalSequence` フィールドを追加。ターミナルなしでデスクトップ通知、ウィンドウタイトル、ベルの通知が可能に</span>
         
       </div>
     </div>
@@ -1656,7 +1902,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` to clone GitHub plugin sources over HTTPS instead of SSH, for environments without a GitHub SSH key
-        <span class="ja">`CLAUDE_CODE_PLUGIN_PREFER_HTTPS` を追加し、GitHub SSHキーがない環境向けにGitHubプラグインソースをSSHではなくHTTPSでクローン可能に</span>
+        <span class="ja">GitHubのSSHキーがない環境向けに、GitHubプラグインソースをSSHではなくHTTPSでクローンする `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` を追加</span>
         <span class="platforms">[ssh]</span>
       </div>
     </div>
@@ -1665,7 +1911,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `ANTHROPIC_WORKSPACE_ID` environment variable for workload identity federation — scopes the minted token to a specific workspace when the federation rule covers more than one
-        <span class="ja">ワークロードアイデンティティフェデレーション用に `ANTHROPIC_WORKSPACE_ID` 環境変数を追加：フェデレーションルールが複数ワークスペースをカバーする場合にトークンを特定ワークスペースに限定</span>
+        <span class="ja">ワークロードIDフェデレーション用の `ANTHROPIC_WORKSPACE_ID` 環境変数を追加。フェデレーションルールが複数ワークスペースを対象とする場合にトークンを特定のものに限定可能に</span>
         
       </div>
     </div>
@@ -1674,7 +1920,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `claude agents --cwd &lt;path&gt;` to scope the session list to a directory
-        <span class="ja">`claude agents --cwd &lt;path&gt;` を追加し、セッションリストの対象ディレクトリを限定可能に</span>
+        <span class="ja">セッションリストをディレクトリ単位で絞り込む `claude agents --cwd &lt;path&gt;` を追加</span>
         
       </div>
     </div>
@@ -1683,7 +1929,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/feedback` can now include recent sessions (last 24 hours or 7 days) for issues spanning more than the current session
-        <span class="ja">`/feedback` で現在以外のセッション（過去24時間または7日間）を含められるように変更</span>
+        <span class="ja">`/feedback` で現在のセッションにまたがる問題報告のため、直近24時間または7日間のセッションを含めることが可能に</span>
         
       </div>
     </div>
@@ -1692,7 +1938,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Rewind menu: added &#34;Summarize up to here&#34; to compress earlier context while keeping recent turns intact
-        <span class="ja">Rewindメニュー：「ここまでを要約」を追加し、最近のやり取りは保持したまま以前のコンテキストを圧縮可能に</span>
+        <span class="ja">リワインドメニュー：「ここまでを要約」を追加。直近のやり取りを維持しつつ過去のコンテキストを圧縮可能に</span>
         
       </div>
     </div>
@@ -1701,7 +1947,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Auto mode permission dialog now explains when a `permissions.ask` rule caused the prompt
-        <span class="ja">Autoモードの権限ダイアログで、`permissions.ask` ルールが原因のプロンプトである場合に理由を表示</span>
+        <span class="ja">自動モードの権限ダイアログで、`permissions.ask` ルールによるプロンプト発生時にその旨を表示</span>
         
       </div>
     </div>
@@ -1710,7 +1956,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Restored the &#34;view diff in your IDE&#34; option on file-edit permission prompts when an IDE is connected
-        <span class="ja">IDE接続時に、ファイル編集の権限プロンプトで「IDEでdiffを表示」オプションを復元</span>
+        <span class="ja">IDE接続時にファイル編集権限プロンプトから「IDEで差分を表示」するオプションを復元</span>
         
       </div>
     </div>
@@ -1719,7 +1965,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Background agents launched via `/bg` or `←←` now preserve the current permission mode instead of reverting to default
-        <span class="ja">`/bg` や `←←` で起動したバックグラウンドエージェントが、デフォルトに戻らず現在の権限モードを保持するように変更</span>
+        <span class="ja">`/bg` または `←←` で起動したバックグラウンドエージェントが、デフォルトに戻らず現在の権限モードを保持するように修正</span>
         
       </div>
     </div>
@@ -1728,7 +1974,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude agents`: agents that finish work but leave a background shell running now move to Completed instead of staying under Working
-        <span class="ja">`claude agents` で作業完了後もバックグラウンドシェルが実行中のエージェントが、WorkingではなくCompletedに移動するように変更</span>
+        <span class="ja">`claude agents`：タスク完了後もバックグラウンドシェルが実行中のエージェントが、WorkingではなくCompletedに移動するように変更</span>
         
       </div>
     </div>
@@ -1737,7 +1983,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved spinner feedback during long thinking periods — the spinner now warms to amber after 10 seconds to signal Claude is still working
-        <span class="ja">長時間の思考中のスピナー表示を改善：10秒経過後に色がアンバーに変化し、Claudeが処理中であることを通知</span>
+        <span class="ja">長時間の思考中のスピナーフィードバックを改善：10秒経過後に色がアンバーに変わり、Claudeが処理中であることを示唆</span>
         
       </div>
     </div>
@@ -1746,7 +1992,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved plugin menu navigation: `→`/Tab switch tabs, `↑` moves to the tab strip, and tab headers and search box are clickable in fullscreen mode
-        <span class="ja">プラグインメニューのナビゲーションを改善：`→`/Tabでタブ切り替え、`↑`でタブストリップへ移動、フルスクリーンモードでタブヘッダーと検索ボックスをクリック可能に</span>
+        <span class="ja">プラグインメニューの操作性を改善：`→`/Tabでのタブ切り替え、`↑`でのタブストリップへの移動、フルスクリーンモードでのタブヘッダーと検索ボックスのクリックに対応</span>
         
       </div>
     </div>
@@ -1755,7 +2001,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Fixed `claude agents` showing the agent-type list instead of the dashboard when launched through a wrapper that adds flags
-        <span class="ja">フラグを追加するラッパー経由で `claude agents` を起動した際、ダッシュボードではなくエージェント一覧が表示される問題を修正</span>
+        <span class="ja">`claude agents` をフラグ付きで起動した際に、ダッシュボードではなくエージェント一覧が表示されてしまう問題を修正</span>
         
       </div>
     </div>
@@ -1764,7 +2010,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Fixed switching permission mode while a tool-permission prompt is open not auto-dismissing the prompt when the new setting permits the tool
-        <span class="ja">ツールの権限プロンプトが開いている間に権限モードを切り替えた際、新設定で許可される場合にプロンプトが自動的に閉じない問題を修正</span>
+        <span class="ja">ツール権限プロンプトが表示されている間に権限モードを切り替えても、設定変更によりツールが許可された場合にプロンプトが自動で閉じない問題を修正</span>
         
       </div>
     </div>
@@ -1773,7 +2019,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         [VSCode] Voice mode: the WSL error now suggests installing `sox libsox-fmt-pulse` for WSLg users
-        <span class="ja">[VSCode] Voice mode: WSLでのエラー時、WSLgユーザー向けに`sox libsox-fmt-pulse`のインストールを提案するように修正</span>
+        <span class="ja">[VSCode] Voiceモード: WSLgユーザーに対し、エラー発生時に`sox libsox-fmt-pulse`のインストールを促すよう修正</span>
         <span class="platforms">[vscode, windows]</span>
       </div>
     </div>
@@ -1782,7 +2028,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         `claude agents`: launching a session no longer fails when the pre-warmed background worker is unhealthy — now falls back to a fresh launch
-        <span class="ja">`claude agents`: 事前起動されたバックグラウンドworkerが不健康な場合に失敗せず、新規起動にフォールバックするように修正</span>
+        <span class="ja">`claude agents`: バックグラウンドワーカが不安定な場合でも、新しいセッションを起動できるよう修正</span>
         
       </div>
     </div>
@@ -1791,7 +2037,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude agents` no longer shows empty placeholder sessions left over from backgrounding a fresh REPL, and shows onboarding text when entered via ← with no other agents
-        <span class="ja">`claude agents`: REPLをバックグラウンド化した際に残る空のセッションを表示しないようにし、他のエージェントがない状態で←から入った際にオンボーディングテキストを表示するように修正</span>
+        <span class="ja">`claude agents`: REPLのバックグラウンド化で残る空のセッションを表示しないよう修正、エージェントなしで←から入った際にオンボーディングを表示</span>
         
       </div>
     </div>
@@ -1800,7 +2046,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Empty idle background sessions left over from `←` are now automatically retired by the daemon after 5 minutes
-        <span class="ja">`←`から残されたアイドル状態のバックグラウンドセッションを、5分後にデーモンが自動的に終了するように修正</span>
+        <span class="ja">`←`から残ったアイドル状態のバックグラウンドセッションを、5分後にデーモンが自動的に終了させるよう変更</span>
         
       </div>
     </div>
@@ -1809,7 +2055,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background side-queries sending an unavailable Haiku model ID on Bedrock/Vertex/Foundry/gateway when no `ANTHROPIC_SMALL_FAST_MODEL` override is set — now falls back to the main-loop model
-        <span class="ja">バックグラウンドのサイドクエリで、`ANTHROPIC_SMALL_FAST_MODEL` 指定がない場合に Bedrock/Vertex/Foundry/gateway で利用不可な Haiku モデルIDが送信される問題を修正（メインループのモデルへフォールバック）</span>
+        <span class="ja">バックグラウンドクエリで `ANTHROPIC_SMALL_FAST_MODEL` 指定がない場合に Bedrock/Vertex/Foundry/gateway で利用不可なHaikuモデルIDが送信される問題を修正。メインループのモデルへフォールバックするように変更</span>
         
       </div>
     </div>
@@ -1818,7 +2064,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude daemon status` and `/doctor` on Windows throwing when the daemon pipe key file is locked or unreadable — now shows the underlying error instead of an opaque failure
-        <span class="ja">Windowsでデーモンのパイプキーファイルがロック/読み取り不可の際に `claude daemon status` や `/doctor` が投げるエラーを、詳細なエラー表示に変更</span>
+        <span class="ja">`claude daemon status` と `/doctor` で、Windowsのデーモンパイプキーファイルがロック/読み取り不可の際に不明瞭なエラーではなく根本原因を表示するように修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -1827,7 +2073,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude agents` opening a crashed session firing redundant dispatches when the working directory was deleted
-        <span class="ja">`claude agents` でクラッシュしたセッションを開く際、作業ディレクトリが削除されていると冗長なディスパッチが発生する問題を修正</span>
+        <span class="ja">作業ディレクトリが削除された状態で `claude agents` からクラッシュしたセッションを開くと不要なディスパッチが発生する問題を修正</span>
         
       </div>
     </div>
@@ -1836,7 +2082,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background jobs on a custom `ANTHROPIC_BASE_URL` gateway not getting auto-named — the namer now uses the main model when no Haiku model is configured
-        <span class="ja">カスタムの `ANTHROPIC_BASE_URL` ゲートウェイ上のバックグラウンドジョブが自動命名されない問題を修正（Haikuモデル未設定時はメインモデルを使用）</span>
+        <span class="ja">カスタム `ANTHROPIC_BASE_URL` ゲートウェイ上のバックグラウンドジョブが自動命名されない問題を修正。Haikuモデル未設定時はメインモデルを使用するように変更</span>
         
       </div>
     </div>
@@ -1845,7 +2091,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/model` in one session silently changing the autocompact threshold in other concurrent sessions
-        <span class="ja">あるセッションでの `/model` 変更が、実行中の他のセッションの自動圧縮しきい値に影響する問題を修正</span>
+        <span class="ja">あるセッションでの `/model` コマンドが、他の同時実行セッションの自動圧縮しきい値を意図せず変更してしまう問題を修正</span>
         
       </div>
     </div>
@@ -1854,7 +2100,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed pressing Enter while a permission/dialog prompt is open also submitting text in the input box
-        <span class="ja">権限/ダイアログプロンプトが開いている時にEnterキーを押すと入力ボックスのテキストも送信される問題を修正</span>
+        <span class="ja">権限/ダイアログのプロンプト表示中にEnterキーを押すと入力ボックスのテキストも送信されてしまう問題を修正</span>
         
       </div>
     </div>
@@ -1863,7 +2109,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed hooks receiving a non-existent `transcript_path` after `EnterWorktree` switches the working directory
-        <span class="ja">`EnterWorktree`で作業ディレクトリを切り替えた後、フックが存在しない`transcript_path`を受け取る問題を修正</span>
+        <span class="ja">`EnterWorktree` で作業ディレクトリを切り替えた後に、フックが存在しない `transcript_path` を受け取る問題を修正</span>
         
       </div>
     </div>
@@ -1872,7 +2118,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed markdown tables with cell wrapping falling back to the vertical key-value layout instead of rendering as a bordered grid (regression in 2.1.136)
-        <span class="ja">セル折り返しのあるMarkdownテーブルが境界線付きグリッドとして表示されず、垂直キーバリューレイアウトに戻る問題を修正（2.1.136でのリグレッション）</span>
+        <span class="ja">セル折り返しのあるMarkdownテーブルが枠線付きグリッドではなく垂直のキー・バリュー形式で表示される問題を修正（2.1.136の回帰）</span>
         
       </div>
     </div>
@@ -1881,7 +2127,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed cancelled prompts being removed from Up-arrow history when auto-restored into the input box, avoiding duplicate entries
-        <span class="ja">自動復元された入力ボックスのキャンセル済みプロンプトがUp-arrow履歴から削除され、重複登録される問題を修正</span>
+        <span class="ja">キャンセルされたプロンプトが入力ボックスに自動復元される際に、Upキーの履歴に重複して残る問題を修正</span>
         
       </div>
     </div>
@@ -1890,7 +2136,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed prompts cancelled with Ctrl+C/Esc before any response being dropped from Up-arrow history
-        <span class="ja">返答前にCtrl+C/EscでキャンセルされたプロンプトがUp-arrow履歴から消える問題を修正</span>
+        <span class="ja">Ctrl+C/EscでキャンセルしたプロンプトがUp-arrow履歴から消える問題を修正</span>
         
       </div>
     </div>
@@ -1899,7 +2145,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Ctrl+C not interrupting a running turn while in vim INSERT/VISUAL mode
-        <span class="ja">vimのINSERT/VISUALモード中にCtrl+Cが実行中のターンを中断できない問題を修正</span>
+        <span class="ja">vimのINSERT/VISUALモード中にCtrl+Cで実行中のターンが中断されない問題を修正</span>
         
       </div>
     </div>
@@ -1908,7 +2154,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed alternative `chat:submit` keybindings (e.g. `meta+enter`, `ctrl+enter`) not working when `enter` is rebound to `chat:newline`
-        <span class="ja">`enter`が`chat:newline`に再バインドされている場合に、代替の`chat:submit`キーバインド（`meta+enter`や`ctrl+enter`等）が機能しない問題を修正</span>
+        <span class="ja">enterがchat:newlineに再割り当てされている際、chat:submitの代替キーバインド（meta+enter等）が機能しない問題を修正</span>
         
       </div>
     </div>
@@ -1917,7 +2163,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed prompt suggestions being silently disabled when an output style was configured
-        <span class="ja">出力スタイルが設定されているとプロンプトの提案がサイレントに無効化される問題を修正</span>
+        <span class="ja">出力スタイルを設定するとプロンプトの提案が密かに無効化される問題を修正</span>
         
       </div>
     </div>
@@ -1926,7 +2172,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `spinnerVerbs` setting not being honored in turn-completion messages
-        <span class="ja">ターン完了メッセージで`spinnerVerbs`設定が反映されない問題を修正</span>
+        <span class="ja">ターン完了メッセージでspinnerVerbs設定が反映されない問題を修正</span>
         
       </div>
     </div>
@@ -1935,7 +2181,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed AskUserQuestion popup hiding the last line of preceding chat content
-        <span class="ja">AskUserQuestionポップアップがチャットの最後の行を隠してしまう問題を修正</span>
+        <span class="ja">AskUserQuestionポップアップが直前のチャットの最終行を隠す問題を修正</span>
         
       </div>
     </div>
@@ -1944,7 +2190,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Web Search status showing &#34;Did 0 searches&#34; when searches returned errors
-        <span class="ja">Web検索がエラーを返した際にステータスが「Did 0 searches」と表示される問題を修正</span>
+        <span class="ja">検索がエラーになった際、Web Searchのステータスが「0件の検索を実行」と表示される問題を修正</span>
         
       </div>
     </div>
@@ -1962,7 +2208,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed light-ansi theme using invisible white for diff context lines on light backgrounds — now uses black
-        <span class="ja">light-ansiテーマで明るい背景上のdiffコンテキスト行が不可視の白になる問題を修正（黒に変更）</span>
+        <span class="ja">light-ansiテーマでdiffのコンテキスト行が背景色と同化して見えなくなる問題を修正（黒に変更）</span>
         
       </div>
     </div>
@@ -1971,7 +2217,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed error overlay dumping minified bundle source that hid the original error message
-        <span class="ja">エラーオーバーレイが難読化されたバンドルソースを表示し、本来のエラーメッセージが隠れる問題を修正</span>
+        <span class="ja">エラーオーバーレイがミニファイされたソースを表示し、本来のエラーメッセージが隠れる問題を修正</span>
         
       </div>
     </div>
@@ -1980,7 +2226,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed pressing Enter after typing a feedback survey rating digit submitting it as a chat message instead of the rating
-        <span class="ja">フィードバック評価の数値を入力後にEnterキーを押すと、評価ではなくチャットメッセージとして送信される問題を修正</span>
+        <span class="ja">フィードバックの評価を入力後、Enterキーで評価ではなくチャットメッセージとして送信される問題を修正</span>
         
       </div>
     </div>
@@ -1989,7 +2235,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed pressing `x` on a selected subagent in the agent panel typing into the prompt instead of stopping the agent
-        <span class="ja">エージェントパネルで選択中のサブエージェントに対し`x`を押すと、エージェント停止ではなくプロンプトに入力される問題を修正</span>
+        <span class="ja">エージェントパネルで選択したサブエージェントに対し`x`を押すと停止ではなくプロンプトに入力される問題を修正</span>
         
       </div>
     </div>
@@ -1998,7 +2244,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed session title being derived from plugin monitor notifications before the user&#39;s first prompt
-        <span class="ja">ユーザーの最初のプロンプトより前に、セッションタイトルがプラグイン監視通知から生成される問題を修正</span>
+        <span class="ja">ユーザーの最初のプロンプトより前にプラグイン監視通知からセッションタイトルが生成される問題を修正</span>
         
       </div>
     </div>
@@ -2007,7 +2253,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed &#34;Allowed by PermissionRequest hook&#34; repeating once per tool call under a collapsed read/search group
-        <span class="ja">折りたたまれたread/searchグループで「Allowed by PermissionRequest hook」がツール呼び出しごとに繰り返される問題を修正</span>
+        <span class="ja">折りたたまれた読み取り/検索グループ内で「Allowed by PermissionRequest hook」がツール呼び出しごとに繰り返される問題を修正</span>
         
       </div>
     </div>
@@ -2016,7 +2262,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/tui` silently dropping running background shells and subagents — now refuses and asks to wait for them to finish
-        <span class="ja">`/tui`が実行中のバックグラウンドシェルやサブエージェントを強制終了する問題を修正（終了待ちを求める仕様に変更）</span>
+        <span class="ja">`/tui`実行時にバックグラウンドのシェルやサブエージェントが密かに終了される問題を修正（終了待ちを求めるよう変更）</span>
         
       </div>
     </div>
@@ -2025,7 +2271,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed welcome banner showing &#34;API Usage Billing&#34; on Bedrock, Vertex, Foundry, and other third-party providers — now shows the provider name
-        <span class="ja">Bedrock、Vertex、Foundry等のサードパーティプロバイダーでウェルカムバナーに「API Usage Billing」と表示される問題を修正（プロバイダー名を表示）</span>
+        <span class="ja">Bedrock、Vertex、Foundry等でウェルカムバナーに「API Usage Billing」と誤表示される問題を修正（プロバイダー名を表示）</span>
         
       </div>
     </div>
@@ -2034,7 +2280,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/mcp` server list not keeping the focused server visible in short terminals in fullscreen mode
-        <span class="ja">フルスクリーンモードの短いターミナルで、`/mcp`サーバーリストのフォーカス中のサーバーが見えなくなる問題を修正</span>
+        <span class="ja">フルスクリーンモードの短いターミナルで`/mcp`サーバーリストのフォーカス位置が維持されない問題を修正</span>
         
       </div>
     </div>
@@ -2043,7 +2289,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed redaction in `/feedback` bundles producing invalid JSON for quoted values like session IDs
-        <span class="ja">`/feedback`バンドル内の編集機能がセッションIDなどの引用値に対して無効なJSONを生成する問題を修正</span>
+        <span class="ja">`/feedback`バンドル内の編集（redaction）で、セッションID等の引用符付き値が不正なJSONになる問題を修正</span>
         
       </div>
     </div>
@@ -2052,7 +2298,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed desktop and third-party provider sessions incorrectly inheriting `apiKeyHelper`/`ANTHROPIC_AUTH_TOKEN` from host managed-settings
-        <span class="ja">デスクトップおよびサードパーティプロバイダーのセッションが、ホストの管理設定から`apiKeyHelper`/`ANTHROPIC_AUTH_TOKEN`を不適切に継承する問題を修正</span>
+        <span class="ja">デスクトップおよびサードパーティプロバイダーのセッションが、ホストの管理設定から`apiKeyHelper`/`ANTHROPIC_AUTH_TOKEN`を誤って継承する問題を修正</span>
         
       </div>
     </div>
@@ -2061,7 +2307,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed early analytics events being silently dropped when fired before logger initialization
-        <span class="ja">ロガー初期化前に発生した初期のアナリティクスイベントがサイレントに破棄される問題を修正</span>
+        <span class="ja">ロガー初期化前に発生した初期分析イベントが密かに破棄される問題を修正</span>
         
       </div>
     </div>
@@ -2070,7 +2316,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude plugin install` failing for plugins whose marketplace `ref` no longer exists upstream when a `sha` is also pinned
-        <span class="ja">`sha`が固定されている場合でも、マーケットプレイスの`ref`が存在しないプラグインで`claude plugin install`が失敗する問題を修正</span>
+        <span class="ja">`sha`が固定されている場合でも、`ref`がアップストリームに存在しないプラグインで`claude plugin install`が失敗する問題を修正</span>
         
       </div>
     </div>
@@ -2079,7 +2325,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugin details pane showing 0 MCP servers for plugins that declare them via `.mcp.json`
-        <span class="ja">`.mcp.json`経由で宣言されたプラグインで、プラグイン詳細ペインのMCPサーバー数が0と表示される問題を修正</span>
+        <span class="ja">`.mcp.json`で宣言されたMCPサーバーがプラグイン詳細ペインで0件と表示される問題を修正</span>
         
       </div>
     </div>
@@ -2088,7 +2334,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugin MCP servers with unset config variables showing a generic connection failure instead of a &#34;config issue&#34; message with a fix-it hint; malformed `.mcp.json` entries no longer drop other MCP servers
-        <span class="ja">設定変数が未設定のMCPサーバー接続で汎用的な失敗エラーではなく修正ヒント付きのメッセージを表示し、`.mcp.json`の不備で他のサーバーまで無効化されないよう修正</span>
+        <span class="ja">MCPサーバーのconfig変数が未設定の場合、修正ヒントなしの汎用的な接続エラーになる問題を修正；`.mcp.json`の不備で他のMCPサーバーまで無効化される問題を修正</span>
         
       </div>
     </div>
@@ -2097,7 +2343,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed MCP server configs using POSIX shell parameter expansions (e.g. `${var%pattern}`) being incorrectly flagged as missing environment variables
-        <span class="ja">POSIXシェルのパラメータ展開（`${var%pattern}`等）を使用するMCPサーバー設定が、環境変数不足と誤判定される問題を修正</span>
+        <span class="ja">POSIXシェルのパラメータ展開（`${var%pattern}`など）を使用するMCPサーバー設定が、環境変数不足と誤判定される問題を修正</span>
         
       </div>
     </div>
@@ -2106,7 +2352,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed MCP HTTP/SSE servers returning 403 on connect showing as &#34;failed&#34; instead of &#34;needs auth&#34;
-        <span class="ja">MCP HTTP/SSEサーバーへの接続で403エラーが発生した際、「failed」ではなく「needs auth」と表示されるよう修正</span>
+        <span class="ja">MCP HTTP/SSEサーバーへの接続時に403エラーが「認証が必要」ではなく「失敗」と表示される問題を修正</span>
         
       </div>
     </div>
@@ -2115,7 +2361,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed remote MCP servers disconnecting unnecessarily when the optional server-events stream failed to reconnect — tool calls continue over POST
-        <span class="ja">オプションのserver-eventsストリームの再接続失敗時にリモートMCPサーバーが不必要に切断される問題を修正（POST経由のツール呼び出しは継続）</span>
+        <span class="ja">オプションのサーバーイベントストリームの再接続失敗時にリモートMCPサーバーが不要に切断される問題を修正（ツール呼び出しはPOST経由で継続）</span>
         
       </div>
     </div>
@@ -2124,7 +2370,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Remote Control MCP connectors all failing with 401 when the worker session token rotated mid-session
-        <span class="ja">セッション中にworkerのセッションIDがローテーションした際、Remote ControlのMCPコネクタがすべて401エラーになる問題を修正</span>
+        <span class="ja">ワーカーセッションのトークンが更新された際に、すべてのRemote Control MCPコネクタが401で失敗する問題を修正</span>
         
       </div>
     </div>
@@ -2133,7 +2379,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Remote Control automatically re-enrolling a trusted device when the server rejects a stale token, instead of looping through `/login`
-        <span class="ja">サーバーが古いトークンを拒否した際、Remote Controlが`/login`のループに陥らず、信頼済みデバイスを自動的に再登録するように修正</span>
+        <span class="ja">サーバーが古いトークンを拒否した際、`/login`をループするのではなく信頼されたデバイスを自動再登録するよう修正</span>
         
       </div>
     </div>
@@ -2142,7 +2388,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a race where early OTel spans could be silently dropped in SDK/headless mode with beta tracing enabled
-        <span class="ja">beta tracing有効時、SDK/headlessモードで初期のOTelスパンが黙って破棄されるレースコンディションを修正</span>
+        <span class="ja">ベータ版トレーシング有効時のSDK/headlessモードで、初期のOTelスパンが密かに破棄される競合状態を修正</span>
         
       </div>
     </div>
@@ -2151,7 +2397,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed custom `voice:pushToTalk` keybindings and `&#34;space&#34;: null` unbinds being silently ignored
-        <span class="ja">カスタムの`voice:pushToTalk`キーバインドおよび`&#34;space&#34;: null`によるバインド解除が無視される問題を修正</span>
+        <span class="ja">カスタムの`voice:pushToTalk`キーバインドおよび`&#34;space&#34;: null`によるバインド解除が密かに無視される問題を修正</span>
         
       </div>
     </div>
@@ -2160,7 +2406,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Windows Alt+V image paste reporting &#34;no image found&#34; when the clipboard contains a screenshot
-        <span class="ja">Windowsでクリップボードにスクリーンショットがある際、Alt+Vでの画像貼り付けが「画像が見つかりません」と報告する問題を修正</span>
+        <span class="ja">Windowsでクリップボードのスクリーンショットを貼り付けた際「no image found」と出る問題を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -2169,7 +2415,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed SDK &#34;Claude Code native binary not found&#34; on Linux when both glibc and musl platform packages are installed
-        <span class="ja">Linuxでglibcとmuslのパッケージが両方インストールされている際、SDKで「Claude Code native binary not found」となる問題を修正</span>
+        <span class="ja">Linuxでglibcとmuslパッケージが共存する環境にてSDKの「Claude Code native binary not found」エラーが発生する問題を修正</span>
         <span class="platforms">[linux]</span>
       </div>
     </div>
@@ -2178,7 +2424,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Bedrock: `awsCredentialExport` now always runs when configured instead of being skipped when ambient AWS credentials resolve, fixing auth for cross-account access
-        <span class="ja">Bedrock: `awsCredentialExport`が環境変数によるAWS認証情報の解決時にスキップされず常に実行されるよう修正し、クロスアカウントアクセスの認証問題を解決</span>
+        <span class="ja">Bedrock: `awsCredentialExport`が環境変数設定時にもスキップされず実行されるよう修正し、クロスアカウントアクセス時の認証を改善</span>
         
       </div>
     </div>
@@ -2187,7 +2433,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [VSCode] Fixed in-chat mic showing no feedback when the microphone produced only silence — now shows &#34;No audio detected&#34;
-        <span class="ja">[VSCode] チャット内のマイクが沈黙時にフィードバックを表示しない問題を修正し、「No audio detected」と表示するように変更</span>
+        <span class="ja">[VSCode] マイクが無音の際、チャット内のマイクUIがフィードバックなしとなっていた問題を修正、「No audio detected」を表示するように変更</span>
         <span class="platforms">[vscode]</span>
       </div>
     </div>
@@ -2208,7 +2454,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed background service startup failing on machines with enterprise endpoint security by allowing more time
-        <span class="ja">企業向けのエンドポイントセキュリティが有効な環境でバックグラウンドサービスの起動時間を延長し、失敗を解消</span>
+        <span class="ja">セキュリティソフトの影響でバックグラウンドサービスの起動に失敗する場合があるため、タイムアウト時間を延長</span>
         
       </div>
     </div>
@@ -2226,7 +2472,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Plugins now warn when a default component folder (e.g. `commands/`) is silently ignored because `plugin.json` sets the matching key. Shown in `/doctor`, `claude plugin list`, and `/plugin`.
-        <span class="ja">`plugin.json`の設定によりデフォルトのコンポーネントフォルダ（`commands/`等）が無視される際、警告を表示するように修正（`/doctor`、`claude plugin list`、`/plugin`で確認可能）</span>
+        <span class="ja">`plugin.json`の設定によりデフォルトのコンポーネントフォルダが無視される場合、`/doctor`等で警告を表示するように修正</span>
         
       </div>
     </div>
@@ -2235,7 +2481,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Improved Agent tool `subagent_type` matching to accept case- and separator-insensitive values (e.g. `&#34;Code Reviewer&#34;` resolves to `code-reviewer`)
-        <span class="ja">Agentツールの`subagent_type`照合を改善し、大文字小文字や区切り文字を区別せず一致するように修正（例: `&#34;Code Reviewer&#34;`が`code-reviewer`に解決）</span>
+        <span class="ja">Agentツールの`subagent_type`マッチングを改善（大文字小文字や区切り文字を無視してマッチするように変更）</span>
         
       </div>
     </div>
@@ -2244,7 +2490,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/goal` silently hanging when `disableAllHooks` or `allowManagedHooksOnly` is set — now shows a clear message instead of an indicator that never resolves
-        <span class="ja">`disableAllHooks`または`allowManagedHooksOnly`設定時に`/goal`が黙ってフリーズする問題を修正し、解決しないインジケーターの代わりに明確なメッセージを表示するように変更</span>
+        <span class="ja">`disableAllHooks`や`allowManagedHooksOnly`設定時に`/goal`が応答しなくなる問題を修正、明示的なメッセージを表示するように変更</span>
         
       </div>
     </div>
@@ -2253,7 +2499,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a regression in settings hot-reload where symlinked settings files caused misattributed change events and spurious `ConfigChange` hooks
-        <span class="ja">設定のホットリロードにおけるリグレッションを修正。シンボリックリンクされた設定ファイルが誤った変更イベントを引き起こし、不要な`ConfigChange`フックが発生する問題を解消</span>
+        <span class="ja">シンボリックリンクされた設定ファイルで発生する不要な`ConfigChange`フックなどの設定ホットリロードのリグレッションを修正</span>
         
       </div>
     </div>
@@ -2262,7 +2508,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude --bg` failing with &#34;connection dropped mid-request&#34; when the background service was about to idle-exit
-        <span class="ja">バックグラウンドサービスがアイドル終了しようとしている際に、`claude --bg`が「connection dropped mid-request」で失敗する問題を修正</span>
+        <span class="ja">バックグラウンドサービスがアイドル終了間際に`claude --bg`を実行すると「connection dropped mid-request」となる問題を修正</span>
         
       </div>
     </div>
@@ -2271,7 +2517,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed remote managed settings not retrying on 401 — now retries once with a force-refreshed token
-        <span class="ja">リモート管理設定が401エラー時に再試行しない問題を修正。トークンを強制リフレッシュして一度だけ再試行するように変更</span>
+        <span class="ja">リモート管理設定が401エラー時に再試行されない問題を修正、トークンをリフレッシュして1度再試行するように変更</span>
         
       </div>
     </div>
@@ -2280,7 +2526,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed managed `extraKnownMarketplaces` auto-update policy not being persisted to `known_marketplaces.json`
-        <span class="ja">管理対象の`extraKnownMarketplaces`自動更新ポリシーが`known_marketplaces.json`に保存されない問題を修正</span>
+        <span class="ja">管理下の`extraKnownMarketplaces`の自動更新ポリシーが`known_marketplaces.json`に保存されない問題を修正</span>
         
       </div>
     </div>
@@ -2289,7 +2535,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/loop` scheduling redundant wakeups to poll for background tasks that already notify on completion
-        <span class="ja">`/loop`が完了時に通知されるタスクに対して不要なウェイクアップをスケジュールしていた問題を修正</span>
+        <span class="ja">`/loop`において完了通知済みのタスクをポーリングするための冗長なウェイクアップをスケジュールする問題を修正</span>
         
       </div>
     </div>
@@ -2298,7 +2544,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a recurring event-loop stall on Windows when a missing executable (e.g. `gh`) triggered synchronous `where.exe` re-spawns on every check
-        <span class="ja">Windowsにおいて、存在しない実行ファイル（例: `gh`）がすべてのチェックで同期的な`where.exe`の再実行を誘発し、イベントループが停止する問題を修正</span>
+        <span class="ja">Windowsで`gh`等の実行ファイルが見つからない場合に発生する`where.exe`の同期再起動によるイベントループの遅延を修正</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -2307,7 +2553,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `Read` tool calls failing validation when `offset` is passed as a whitespace-padded or `+`-prefixed string
-        <span class="ja">`Read`ツール呼び出しにおいて、`offset`に空白が含まれる、または`+`で始まる文字列が渡された場合にバリデーションで失敗する問題を修正</span>
+        <span class="ja">`Read`ツールで`offset`が空白付きや`+`プレフィックス付きの文字列で渡された際の検証エラーを修正</span>
         
       </div>
     </div>
@@ -2316,7 +2562,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed native terminal cursor not staying at the input caret when the terminal loses focus
-        <span class="ja">ターミナルがフォーカスを失った際、ネイティブのターミナルカーソルが入力位置に留まらない問題を修正</span>
+        <span class="ja">ターミナルがフォーカスを失った際に、ネイティブターミナルのカーソルが入力位置に留まらない問題を修正</span>
         
       </div>
     </div>
@@ -2337,7 +2583,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `/goal` command: set a completion condition and Claude keeps working across turns until it&#39;s met. Works in interactive, `-p`, and Remote Control. Shows live elapsed/turns/tokens as an overlay panel
-        <span class="ja">`/goal`コマンドを追加: 完了条件を設定すると、Claudeがその条件を満たすまでターンを跨いで作業を継続。対話モード、`-p`、Remote Controlで動作。経過時間/ターン数/トークン数をオーバーレイパネルで表示</span>
+        <span class="ja">`/goal`コマンドを追加：完了条件を設定し、条件を満たすまでClaudeがターンをまたいで動作するように変更。オーバーレイパネルで状況を表示</span>
         
       </div>
     </div>
@@ -2346,7 +2592,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
       <div class="text">
         Added `/scroll-speed` command to tune mouse wheel scroll speed with a live preview
-        <span class="ja">`/scroll-speed`コマンドを追加: マウスホイールのスクロール速度をライブプレビュー付きで調整可能</span>
+        <span class="ja">`/scroll-speed`コマンドを追加：マウスホイールのスクロール速度をライブプレビュー付きで調整可能に</span>
         
       </div>
     </div>
@@ -2355,7 +2601,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added hook `args: string[]` field (exec form) that spawns the command directly without a shell, so path placeholders never need quoting
-        <span class="ja">hookに `args: string[]` (exec形式) を追加。シェルを介さずコマンドを実行し、パスのプレースホルダーのクォートが不要に</span>
+        <span class="ja">フックに`args: string[]`（exec形式）を追加：シェルを介さず直接コマンドを実行し、パスのクォート不要化</span>
         
       </div>
     </div>
@@ -2364,7 +2610,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added hook `continueOnBlock` config option for `PostToolUse` — set to `true` to feed the hook&#39;s rejection reason back to Claude and continue the turn
-        <span class="ja">`PostToolUse` に `continueOnBlock` 設定を追加。`true` でフックの拒否理由をClaudeに伝え、ターンを継続可能に</span>
+        <span class="ja">フックに`continueOnBlock`オプションを追加：`PostToolUse`で拒否理由をClaudeに伝え、ターンを継続可能に</span>
         
       </div>
     </div>
@@ -2373,7 +2619,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added agent view (Research Preview): a single list of every Claude Code session — running, blocked on you, or done. Run `claude agents` to get started. See https://code.claude.com/docs/en/agent-view
-        <span class="ja">エージェントビュー（Research Preview）を追加: 実行中、停止中、完了済みの全Claude Codeセッションを一覧表示。`claude agents`で開始可能。詳細は https://code.claude.com/docs/en/agent-view を参照</span>
+        <span class="ja">エージェントビュー（Research Preview）を追加：セッション一覧を表示。`claude agents`で利用可能（詳細はドキュメント参照）</span>
         
       </div>
     </div>
@@ -2382,7 +2628,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `claude plugin details &lt;name&gt;` to show a plugin&#39;s component inventory and projected per-session token cost
-        <span class="ja">`claude plugin details &lt;name&gt;`を追加: プラグインのコンポーネント一覧と、セッションあたりの推定トークンコストを表示</span>
+        <span class="ja">`claude plugin details &lt;name&gt;`を追加：プラグインのコンポーネント一覧と推定トークンコストを表示</span>
         
       </div>
     </div>
@@ -2391,7 +2637,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added transcript view navigation: `?` for keyboard shortcuts, `{`/`}` to jump between user prompts, `v` to toggle shortcut panel
-        <span class="ja">トランスクリプトビューのナビゲーションを追加: `?`でキーボードショートカット、`{`/`}`でユーザープロンプト間の移動、`v`でショートカットパネルの切り替えが可能</span>
+        <span class="ja">トランスクリプトビューのナビゲーションを追加：`?`でショートカット表示、`{`/`}`でプロンプト移動、`v`でショートカットパネル切替</span>
         
       </div>
     </div>
@@ -2400,7 +2646,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         MCP stdio servers now receive `CLAUDE_PROJECT_DIR` in their environment, matching hooks. Plugin configs can reference `${CLAUDE_PROJECT_DIR}` in commands
-        <span class="ja">MCP stdioサーバーの環境変数に `CLAUDE_PROJECT_DIR` を追加。プラグイン設定で `${CLAUDE_PROJECT_DIR}` が利用可能に</span>
+        <span class="ja">MCP stdioサーバーが`CLAUDE_PROJECT_DIR`を環境変数として受け取れるよう変更。プラグイン設定で`${CLAUDE_PROJECT_DIR}`が利用可能に</span>
         
       </div>
     </div>
@@ -2409,7 +2655,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Compaction prompt now asks the model to preserve sensitive user instructions
-        <span class="ja">コンパクションプロンプトで、ユーザーの重要な指示を維持するようモデルに指示</span>
+        <span class="ja">コンパクション（要約）プロンプトにおいて、機密性の高いユーザー指示を保持するようモデルに指示を追加</span>
         
       </div>
     </div>
@@ -2418,7 +2664,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/mcp` Reconnect now picks up `.mcp.json` edits without a restart, and shows the HTTP status and URL when reconnecting fails
-        <span class="ja">`/mcp` Reconnectで再起動なしに `.mcp.json` の変更を反映。再接続失敗時にHTTPステータスとURLを表示</span>
+        <span class="ja">`/mcp` Reconnectで再起動なしに `.mcp.json` の変更が反映されるようになり、再接続失敗時にHTTPステータスとURLを表示するようにしました。</span>
         
       </div>
     </div>
@@ -2427,7 +2673,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/context all` per-skill token estimates now account for the model&#39;s tokenizer and show rounded values
-        <span class="ja">`/context all` のスキル別トークン推定でモデルのトークナイザーを考慮し、数値を丸めて表示</span>
+        <span class="ja">`/context all` のスキルごとのトークン推定値が、モデルのトークナイザーを考慮し、数値を丸めて表示するようにしました。</span>
         
       </div>
     </div>
@@ -2436,7 +2682,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `claude plugin install &lt;name&gt;@&lt;marketplace&gt;` now auto-refreshes the marketplace and retries before reporting a plugin as not found
-        <span class="ja">`claude plugin install &lt;name&gt;@&lt;marketplace&gt;` でマーケットプレイスを自動更新し、見つからない場合に再試行するように</span>
+        <span class="ja">`claude plugin install &lt;name&gt;@&lt;marketplace&gt;` がマーケットプレイスを自動更新し、見つからないと報告する前に再試行するようになりました。</span>
         
       </div>
     </div>
@@ -2445,7 +2691,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/plugin` installed-plugin details now show hook event names and MCP server names cleanly
-        <span class="ja">`/plugin` のインストール済みプラグイン詳細で、フックイベント名とMCPサーバー名を分かりやすく表示</span>
+        <span class="ja">`/plugin` のインストール済みプラグイン詳細で、フックイベント名とMCPサーバー名が整理されて表示されるようになりました。</span>
         
       </div>
     </div>
@@ -2454,7 +2700,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         `/context` now shows the providing plugin&#39;s name for plugin-sourced skills
-        <span class="ja">`/context` で、プラグイン由来のスキルの提供元プラグイン名を表示</span>
+        <span class="ja">`/context` で、プラグイン由来のスキルの提供元プラグイン名を表示するようにしました。</span>
         
       </div>
     </div>
@@ -2463,7 +2709,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Remote MCP server reconnect retry on transient failures is now enabled for all users
-        <span class="ja">全ユーザーでリモートMCPサーバーの暫定的な失敗に対する再接続リトライを有効化</span>
+        <span class="ja">一時的な障害発生時のリモートMCPサーバー再接続リトライが、全ユーザーで有効になりました。</span>
         
       </div>
     </div>
@@ -2472,7 +2718,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         API requests from subagents now carry `x-claude-code-agent-id` / `x-claude-code-parent-agent-id` headers, and `claude_code.llm_request` OTEL spans include `agent_id` / `parent_agent_id` attributes
-        <span class="ja">サブエージェントからのAPIリクエストに `x-claude-code-agent-id` / `x-claude-code-parent-agent-id` ヘッダーを追加し、OTELスパンに属性を含める</span>
+        <span class="ja">サブエージェントからのAPIリクエストに `x-claude-code-agent-id` / `x-claude-code-parent-agent-id` ヘッダーを追加し、`claude_code.llm_request` OTELスパンに `agent_id` / `parent_agent_id` 属性を含めるようにしました。</span>
         
       </div>
     </div>
@@ -2481,7 +2727,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Remote Control, `/schedule`, claude.ai MCP connectors, and notification preferences are now disabled when `ANTHROPIC_API_KEY` / `apiKeyHelper` / `ANTHROPIC_AUTH_TOKEN` is set, even if a Claude.ai login also exists. Unset the API key to use these features
-        <span class="ja">`ANTHROPIC_API_KEY` 等が設定されている場合、Claude.aiログインがあっても一部機能を無効化。利用にはAPIキーの解除が必要</span>
+        <span class="ja">`ANTHROPIC_API_KEY` 等が設定されている場合、Claude.aiのログイン状態に関わらず、Remote Control、`/schedule`、claude.ai MCPコネクタ、通知設定を無効化しました。これらを利用するにはAPIキーを解除してください。</span>
         
       </div>
     </div>
@@ -2490,7 +2736,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
       <div class="text">
         Fixed unbounded memory growth when an HTTP/SSE MCP server streams non-protocol data — response bodies now capped at 16 MB per SSE frame
-        <span class="ja">HTTP/SSE MCPサーバーが非プロトコルデータをストリーミングする際のメモリ肥大化を修正。レスポンスボディをSSEフレームあたり16MBに制限</span>
+        <span class="ja">HTTP/SSE MCPサーバーがプロトコル外のデータをストリームする際のメモリ消費増大を防ぐため、レスポンスボディをSSEフレームあたり16MBに制限しました。</span>
         
       </div>
     </div>
@@ -2499,7 +2745,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         [VSCode] Press Cmd/Ctrl+Shift+T to reopen the most recently closed session tab, configurable via `claudeCode.enableReopenClosedSessionShortcut`
-        <span class="ja">[VSCode] Cmd/Ctrl+Shift+Tで直近に閉じたセッションタブを再開可能に（`claudeCode.enableReopenClosedSessionShortcut`で設定可能）</span>
+        <span class="ja">[VSCode] Cmd/Ctrl+Shift+Tで直前に閉じたセッションタブを再開可能に（`claudeCode.enableReopenClosedSessionShortcut`で設定可能）</span>
         <span class="platforms">[vscode]</span>
       </div>
     </div>
@@ -2508,7 +2754,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a deadlock where expired credentials and the `forceRemoteSettingsRefresh` policy setting blocked `claude auth login`/`logout`/`status` with no way to recover
-        <span class="ja">期限切れの認証情報とポリシー設定により `claude auth` コマンドが復旧不能になるデッドロックを修正</span>
+        <span class="ja">認証情報の期限切れと `forceRemoteSettingsRefresh` 設定が競合し、`claude auth` コマンドから復旧不能になるデッドロックを修正しました。</span>
         
       </div>
     </div>
@@ -2517,7 +2763,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `autoAllowBashIfSandboxed` not auto-approving commands with shell expansions like `$VAR` and `$(cmd)`
-        <span class="ja">`autoAllowBashIfSandboxed` が `$VAR` や `$(cmd)` などのシェル展開を含むコマンドを自動承認しない問題を修正</span>
+        <span class="ja">`$VAR` や `$(cmd)` などのシェル展開を含むコマンドが `autoAllowBashIfSandboxed` で自動承認されない不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2526,7 +2772,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a bug where a hook writing to the terminal could corrupt an on-screen interactive prompt; hooks now run without terminal access
-        <span class="ja">フックによる端末への書き込みが対話プロンプトを破損する問題を修正。フックは端末アクセスなしで実行</span>
+        <span class="ja">フックがターミナルに書き込む際にインタラクティブプロンプトが破損する不具合を修正しました（フックはターミナルアクセスなしで実行されます）。</span>
         
       </div>
     </div>
@@ -2535,7 +2781,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `Skill(name *)` permission rules — the wildcard form now works as a prefix match, matching `Bash(ls *)` behavior
-        <span class="ja">`Skill(name *)` のパーミッションルールを修正。ワイルドカードがプレフィックスマッチとして動作し `Bash(ls *)` と挙動を統一</span>
+        <span class="ja">`Skill(name *)` のパーミッションルールにおいて、ワイルドカードがプレフィックス一致として機能するように修正しました（`Bash(ls *)` と同様）。</span>
         
       </div>
     </div>
@@ -2544,7 +2790,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed settings hot-reload not detecting edits to symlinked `~/.claude/settings.json`
-        <span class="ja">設定のホットリロードがシンボリックリンクされた `~/.claude/settings.json` の変更を検知できない問題を修正</span>
+        <span class="ja">シンボリックリンクされた `~/.claude/settings.json` の変更が、設定のホットリロードで検知されない不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2553,7 +2799,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugin details failing to load when the marketplace key differs from the manifest name
-        <span class="ja">マーケットプレイスのキーとマニフェスト名が異なる場合にプラグイン詳細の読み込みが失敗する問題を修正</span>
+        <span class="ja">マーケットプレイスキーとマニフェスト名が異なる場合にプラグイン詳細が読み込めない不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2562,7 +2808,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/model` picker &#34;Default&#34; row not reflecting `ANTHROPIC_DEFAULT_OPUS_MODEL`/`ANTHROPIC_DEFAULT_SONNET_MODEL` overrides
-        <span class="ja">`/model` ピッカーの「Default」行が `ANTHROPIC_DEFAULT_...` 環境変数の上書きを反映しない問題を修正</span>
+        <span class="ja">`/model` ピッカーの「Default」行が `ANTHROPIC_DEFAULT_OPUS_MODEL` 等のオーバーライドを反映していない不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2571,7 +2817,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed spurious &#34;stream idle timeout&#34; 5 minutes after a response completed, caused by the watchdog timer not being cleared on stream cancellation
-        <span class="ja">レスポンス完了後5分で発生する不要な「stream idle timeout」を修正。ストリームキャンセル時にウォッチドッグタイマーをクリア</span>
+        <span class="ja">ストリーム終了時にウォッチドッグタイマーがクリアされず、5分後に「stream idle timeout」が発生する不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2580,7 +2826,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed silent `exit 1` when 10+ MCP servers are configured and the cache directory is unwritable — the error message now includes the underlying cause
-        <span class="ja">MCPサーバーが10個以上でキャッシュディレクトリに書き込めない際に `exit 1` が黙って発生する問題を修正。エラー原因を表示</span>
+        <span class="ja">MCPサーバーが10個以上設定され、キャッシュディレクトリに書き込めない場合に `exit 1` が沈黙する問題を修正し、原因を表示するようにしました。</span>
         
       </div>
     </div>
@@ -2589,7 +2835,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a typing cursor blinking on tab names, list pointers, and select rows in dialogs
-        <span class="ja">ダイアログのタブ名やリストポインター上でタイピングカーソルが点滅する問題を修正</span>
+        <span class="ja">ダイアログのタブ名やリストポインタ、選択行でカーソルが点滅する不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2598,7 +2844,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed transcript view letter shortcuts not working after mouse click
-        <span class="ja">マウス操作後にトランスクリプト表示のキーボードショートカットが動作しない問題を修正</span>
+        <span class="ja">マウスをクリックした後、トランスクリプトビューのキーボードショートカットが機能しなくなる不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2607,7 +2853,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Bash-mode up-arrow history repeating the first entry and clobbering the in-progress draft
-        <span class="ja">Bashモードの↑キーで履歴の最初の項目が繰り返され、入力中の内容が上書きされる問題を修正</span>
+        <span class="ja">Bashモードのヒストリー操作で、上矢印キーを押すと最初の項目が繰り返され、編集中の中身が消える不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2616,7 +2862,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed pasting or dropping multiple images only inserting the last one
-        <span class="ja">複数の画像を貼り付けやドロップした際に、最後の画像しか挿入されない問題を修正</span>
+        <span class="ja">複数の画像を貼り付けまたはドロップした際に、最後の画像しか挿入されない不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2625,7 +2871,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed hyperlinks using unreadable dark navy on dark themes — they now adapt to the active theme
-        <span class="ja">ダークテーマでハイパーリンクが見づらい問題を修正。テーマに合わせて色を調整</span>
+        <span class="ja">ダークテーマでハイパーリンクが見づらい色で表示されていた不具合を修正し、テーマに適応するようにしました。</span>
         
       </div>
     </div>
@@ -2634,7 +2880,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed model picker showing a redundant &#34;Current model&#34; row for third-party users whose model is set to the `opus` alias
-        <span class="ja">サードパーティユーザーでモデルが `opus` エイリアスの場合、モデルピッカーに冗長な「Current model」行が表示される問題を修正</span>
+        <span class="ja">サードパーティユーザー向けに、モデルが `opus` エイリアスに設定されている場合の冗長な「Current model」行を削除しました。</span>
         
       </div>
     </div>
@@ -2643,7 +2889,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed legacy Opus picker entry on PAYG 3P providers resolving to the same model as the default entry
-        <span class="ja">PAYG 3PプロバイダーでレガシーなOpusピッカーがデフォルトエントリと同じモデルに解決される問題を修正</span>
+        <span class="ja">PAYGサードパーティプロバイダーにおいて、古いOpusピッカーエントリがデフォルトと同じモデルに解決される不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2652,7 +2898,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
       <div class="text">
         Fixed mouse wheel scrolling speed in Cursor and VS Code 1.92–1.104; the trackpad now scrolls at a steady rate and the mouse wheel keeps ~3 lines per notch
-        <span class="ja">CursorやVS Codeにおけるマウスホイールのスクロール速度を修正。トラックパッドは一定速度、ホイールは約3行ずつに改善</span>
+        <span class="ja">CursorおよびVS Code 1.92–1.104でのマウスホイールのスクロール速度を調整し、トラックパッドとマウスの両方で安定した速度になるようにしました。</span>
         
       </div>
     </div>
@@ -2661,7 +2907,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed scroll behavior in Windows Terminal and VS Code when attached to background sessions
-        <span class="ja">Windows TerminalおよびVS Codeでバックグラウンドセッションにアタッチした際のスクロール動作を修正</span>
+        <span class="ja">Windows TerminalおよびVS Codeでバックグラウンドセッションにアタッチした際のスクロール挙動を修正しました。</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -2670,7 +2916,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed MCP resources from disconnected servers lingering in `@server:` autocomplete
-        <span class="ja">切断されたサーバーのMCPリソースが`@server:`のオートコンプリートに残る問題を修正</span>
+        <span class="ja">切断されたサーバーのMCPリソースが `@server:` のオートコンプリートに残り続ける不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2679,7 +2925,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed two-file diff snippets over-reporting the number of truncated lines by one
-        <span class="ja">2ファイル間のdiffスニペットで、省略された行数が1行多くカウントされる問題を修正</span>
+        <span class="ja">2ファイル間のdiffスニペットで、切り捨てられた行数が1行多くカウントされる不具合を修正しました。</span>
         
       </div>
     </div>
@@ -2688,7 +2934,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Grep results not relativizing Windows drive-letter paths and count mode reporting wrong totals for single-file paths
-        <span class="ja">Grep結果でWindowsのドライブレターパスが相対化されず、単一ファイルパスの件数集計が誤る問題を修正</span>
+        <span class="ja">Grep結果でWindowsのドライブレターパスが相対化されない問題および、単一ファイルパスで合計数が誤って報告される不具合を修正しました。</span>
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -2697,7 +2943,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed border-embedded text overflowing on CJK/emoji due to visual cell width miscalculation
-        <span class="ja">CJK/絵文字のセル幅計算ミスによる境界線上のテキストオーバーフローを修正</span>
+        <span class="ja">CJK/絵文字の表示セル幅の計算ミスによるテキストのはみ出しを修正</span>
         
       </div>
     </div>
@@ -2706,7 +2952,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed fuzzy-match highlighting splitting emoji and astral-plane characters mid-pair
-        <span class="ja">ファジーマッチのハイライトが絵文字や補助文字を分断する問題を修正</span>
+        <span class="ja">ファジーマッチのハイライト処理で絵文字や補助文字が途中で分割される問題を修正</span>
         
       </div>
     </div>
@@ -2715,7 +2961,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed skill argument names containing regex metacharacters breaking argument substitution
-        <span class="ja">正規表現のメタ文字を含むスキル引数名で引数置換が機能しない問題を修正</span>
+        <span class="ja">スキルの引数名に正規表現のメタ文字が含まれると引数置換が壊れる問題を修正</span>
         
       </div>
     </div>
@@ -2724,7 +2970,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed ProgressBar rendering a full block for an almost-full fractional cell
-        <span class="ja">ProgressBarで端数セルがほぼ満杯の際に全ブロックとして描画される問題を修正</span>
+        <span class="ja">ProgressBarがほぼ満杯の端数セルで全ブロックを表示してしまう問題を修正</span>
         
       </div>
     </div>
@@ -2733,7 +2979,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed task polling and `fs.watch` being resurrected when the last subscriber leaves while a fetch is in flight
-        <span class="ja">フェッチ処理中に最後の購読者が離脱した際、タスクポーリングと`fs.watch`が再開される問題を修正</span>
+        <span class="ja">フェッチ中に最後の購読者が離脱した際に、タスクのポーリングと`fs.watch`が再開されてしまう問題を修正</span>
         
       </div>
     </div>
@@ -2742,7 +2988,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed plugin dependency resolution leaving a stale count when the manifest name differs from the source identifier
-        <span class="ja">プラグインの依存関係解決において、マニフェスト名とソース識別子が異なる場合に古いカウントが残る問題を修正</span>
+        <span class="ja">マニフェスト名とソース識別子が異なる場合に、プラグインの依存関係解決でカウントが古くなる問題を修正</span>
         
       </div>
     </div>
@@ -2751,7 +2997,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Insights Time-of-Day chart skewing when a session has an unparseable timestamp
-        <span class="ja">セッションに解析不能なタイムスタンプが含まれるとInsightsのTime-of-Dayチャートが歪む問題を修正</span>
+        <span class="ja">InsightsのTime-of-Dayチャートで、解析不能なタイムスタンプが含まれるとグラフが歪む問題を修正</span>
         
       </div>
     </div>
@@ -2760,7 +3006,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed keybindings using only the cmd/super/win modifier being flagged as unparseable
-        <span class="ja">cmd/super/win修飾キーのみを使用するキーバインドが解析不能と判定される問題を修正</span>
+        <span class="ja">cmd/super/win修飾子のみを使用したキーバインドが解析不能と判定される問題を修正</span>
         
       </div>
     </div>
@@ -2769,7 +3015,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude_code.active_time.total` OpenTelemetry metric not being emitted in `--print` mode
-        <span class="ja">`--print`モードで`claude_code.active_time.total` OpenTelemetryメトリクスが出力されない問題を修正</span>
+        <span class="ja">`--print`モードで`claude_code.active_time.total`のOpenTelemetryメトリクスが出力されない問題を修正</span>
         
       </div>
     </div>
@@ -2778,7 +3024,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `claude plugin update` not preserving cross-plugin symlinks inside a marketplace
-        <span class="ja">`claude plugin update`実行時にマーケットプレイス内のプラグイン間シンボリックリンクが維持されない問題を修正</span>
+        <span class="ja">`claude plugin update`実行時に、マーケットプレイス内のプラグイン間シンボリックリンクが保持されない問題を修正</span>
         
       </div>
     </div>
@@ -2799,7 +3045,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Internal fixes
-        <span class="ja">内部的な修正</span>
+        
         
       </div>
     </div>
@@ -30941,6 +31187,8 @@ document.querySelectorAll('.version-header').forEach(hdr => {
 // --- Release Frequency Chart ---
 (function() {
   const releaseData = [
+    
+    { version: "2.1.149", date: "2026-05-23", entries: 26 },
     
     { version: "2.1.148", date: "2026-05-22", entries: 1 },
     
