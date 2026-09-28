@@ -76,7 +76,7 @@ footer a:hover { text-decoration: underline; }
 <div class="container">
 <header>
   <h1>Claude Code Changelog</h1>
-  <div class="meta">Current: v2.1.283 | Updated: 2026-09-28 13:05 JST | 6424 entries across 405 versions</div>
+  <div class="meta">Current: v2.1.284 | Updated: 2026-09-29 03:05 JST | 6524 entries across 406 versions</div>
 </header>
 
 <!-- Release Frequency Chart -->
@@ -93,27 +93,939 @@ footer a:hover { text-decoration: underline; }
     <canvas id="freq-chart"></canvas>
   </div>
   
-  <div style="font-size:0.78rem;color:var(--text2);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">📈 直近4週: 25リリース・1505変更点（週平均376件） — 12週前比 2.6倍で加速中</div>
+  <div style="font-size:0.78rem;color:var(--text2);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">📈 直近4週: 19リリース・1324変更点（週平均331件） — 12週前比 2.1倍で加速中</div>
   
 </div>
 
 <div class="filters">
   <button class="filter-btn active" data-cat="all">All</button>
   
-  <button class="filter-btn" data-cat="new_feature">★ 新機能 (1184)</button>
+  <button class="filter-btn" data-cat="new_feature">★ 新機能 (1206)</button>
   
-  <button class="filter-btn" data-cat="improvement">↑ 改善 (611)</button>
+  <button class="filter-btn" data-cat="improvement">↑ 改善 (624)</button>
   
-  <button class="filter-btn" data-cat="bug_fix">● バグ修正 (3431)</button>
+  <button class="filter-btn" data-cat="bug_fix">● バグ修正 (3483)</button>
   
-  <button class="filter-btn" data-cat="performance">⚡ パフォーマンス (264)</button>
+  <button class="filter-btn" data-cat="performance">⚡ パフォーマンス (267)</button>
   
-  <button class="filter-btn" data-cat="other">· その他 (934)</button>
+  <button class="filter-btn" data-cat="other">· その他 (944)</button>
   
 </div>
 
 
-<div class="version open" data-version="2.1.283">
+<div class="version open" data-version="2.1.284">
+  <div class="version-header">
+    <h2>v2.1.284</h2>
+    <span class="release-date">2026-09-29 02:11 JST</span>
+    <span class="count">100 changes</span>
+    <span class="arrow">&#9654;</span>
+  </div>
+  <div class="version-body">
+    
+    <div class="entry high" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added `/rate-limit-options` to `/help` and the command menu for claude.ai subscribers, so the usage-limit notices that mention it point to a command you can find
+        <span class="ja">[新機能] Added `/rate-limit-options` to `/help` and the command menu for claude.ai subscr</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry high" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added Claude apps gateway startup warnings when a managed policy&#39;s `availableModels` is empty, or leaves out the model Claude Code starts on without setting `model` or `enforceAvailableModels`
+        <span class="ja">[新機能] Added Claude apps gateway startup warnings when a managed policy&#39;s `availableMod</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry high" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        [VSCode] Added an optional time above each prompt and response, with a date line where the day changes (Claude Code: Show Message Timestamps setting, off by default)
+        <span class="ja">[新機能] [VSCode] Added an optional time above each prompt and response, with a date line</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added Claude Sonnet 5.5 (`claude-sonnet-5-5`), now the default Sonnet model on the Anthropic API — 1M context, $2/$10 per Mtok with $0.20/Mtok cache reads
+        <span class="ja">[新機能] Added Claude Sonnet 5.5 (`claude-sonnet-5-5`), now the default Sonnet model on t</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added a &#34;Yes, but ask again next time&#34; answer to auto mode&#39;s prompt before a read outside the working directories, so you can allow that one read and still be asked about later ones
+        <span class="ja">[新機能] Added a &#34;Yes, but ask again next time&#34; answer to auto mode&#39;s prompt before a rea</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added dollar amounts to the Claude apps gateway spend limit in `/usage` and the status line (for example &#34;$271.40 / $500.00 spent this month&#34;) when the gateway runs this version or later; the status line&#39;s `rate_limits.spend_limit` also gains `used_usd`, `limit_usd` and `period`
+        <span class="ja">[新機能] Added dollar amounts to the Claude apps gateway spend limit in `/usage` and the </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added `effortSlider:decreaseEffort`, `increaseEffort` and `toggleUltracode` keybinding actions, so the `/effort` slider&#39;s arrow and Tab keys can be rebound in `keybindings.json`
+        <span class="ja">[新機能] Added `effortSlider:decreaseEffort`, `increaseEffort` and `toggleUltracode` keyb</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added `/mcp reconnect all` in the interactive terminal to retry every MCP server that failed to connect or needs authentication at once
+        <span class="ja">[新機能] Added `/mcp reconnect all` in the interactive terminal to retry every MCP server</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added `auth: { google: {} }` for Claude apps gateway `telemetry.forward_to` destinations, so telemetry can be exported straight to Google Cloud&#39;s OTLP endpoint using the gateway&#39;s Google Cloud credentials
+        <span class="ja">[新機能] Added `auth: { google: {} }` for Claude apps gateway `telemetry.forward_to` dest</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Added certificate client authentication (`private_key_jwt`) between the Claude apps gateway and its identity provider, for identity providers that issue certificate credentials instead of client secrets
+        <span class="ja">[新機能] Added certificate client authentication (`private_key_jwt`) between the Claude a</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Fixed `claude mcp add` reporting success when managed settings restrict MCP servers to plugins; it now refuses and says what to do, instead of saving a server that never loads
+        <span class="ja">[新機能] Fixed `claude mcp add` reporting success when managed settings restrict MCP serv</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Fixed Bash tool failing on Windows with many plugins enabled: plugin `bin/` directories that don&#39;t exist are no longer added to PATH, and inherited entries aren&#39;t added twice
+        <span class="ja">[新機能] Fixed Bash tool failing on Windows with many plugins enabled: plugin `bin/` dire</span>
+        <span class="platforms">[windows]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Fixed sessions launched without the `SendMessage` tool (such as by Claude Desktop) still being told to message other sessions with it
+        <span class="ja">[新機能] Fixed sessions launched without the `SendMessage` tool (such as by Claude Deskto</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Fixed artifact database write results telling Claude that every viewer sees a write to a viewer&#39;s private `data/users/` subtree, and added a &#34;view&#34; level to `as_level`
+        <span class="ja">[新機能] Fixed artifact database write results telling Claude that every viewer sees a wr</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved the usage-limit wait: the limit&#39;s state and the countdown with the usage-credits option now show as one block under the prompt, and limit messages no longer repeat the countdown
+        <span class="ja">[改善] Improved the usage-limit wait: the limit&#39;s state and the countdown with the usag</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved the &#34;No such tool available&#34; error for Claude in Chrome tools called without their prefix: it now names the tool to call
+        <span class="ja">[改善] Improved the &#34;No such tool available&#34; error for Claude in Chrome tools called wi</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved Monitor event rows to show what each event printed instead of repeating the description, and stopped repeating an unchanged &#34;Waiting for N … to finish&#34; line after every event
+        <span class="ja">[改善] Improved Monitor event rows to show what each event printed instead of repeating</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved Workflow tool sandbox hardening for errors thrown by async script hooks
+        <span class="ja">[改善] Improved Workflow tool sandbox hardening for errors thrown by async script hooks</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="performance">
+      <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
+      <div class="text">
+        Improved startup time and memory use by building only the parts of the settings schema that your settings files actually use
+        <span class="ja">[パフォーマンス] Improved startup time and memory use by building only the parts of the settings </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved `/claude-api`: `hillclimb` no longer spends rounds on prompt rewordings too small for the eval to measure, and an extra page you ask for beside `report.html` is built as one local file that loads nothing from the network
+        <span class="ja">[改善] Improved `/claude-api`: `hillclimb` no longer spends rounds on prompt rewordings</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved lists such as `/tasks`, `/copy` and `/hooks`: the details after each name now line up in one column when they fit, and otherwise sit at the right edge
+        <span class="ja">[改善] Improved lists such as `/tasks`, `/copy` and `/hooks`: the details after each na</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Improved `claude plugin marketplace add` to say when it replaces a marketplace already added under the same name from a different source, and how to undo it
+        <span class="ja">[新機能] Improved `claude plugin marketplace add` to say when it replaces a marketplace a</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved the startup refusal when managed settings require a sign-in (`forceLoginMethod` or `forceLoginOrgUUID`) and an API key, token or `apiKeyHelper` is configured: it now names the credential in use, where it is set, and how to remove it
+        <span class="ja">[改善] Improved the startup refusal when managed settings require a sign-in (`forceLogi</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="performance">
+      <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
+      <div class="text">
+        Improved auto-memory loading: invisible characters and tags that imitate Claude Code&#39;s own markup are neutralized in `MEMORY.md` and recalled memory notes before they reach Claude
+        <span class="ja">[パフォーマンス] Improved auto-memory loading: invisible characters and tags that imitate Claude </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved `claude remote-control`: in a folder you haven&#39;t trusted yet, it now asks for workspace trust on the terminal instead of exiting
+        <span class="ja">[改善] Improved `claude remote-control`: in a folder you haven&#39;t trusted yet, it now as</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved artifact pages: Claude writes its design plan into the page instead of the reply, and uses the name you already gave something as the page title
+        <span class="ja">[改善] Improved artifact pages: Claude writes its design plan into the page instead of </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        Improved the Artifact tool so that when Claude is given a claude.ai chat or project link, an artifact from a chat, or an artifact id on its own, it asks for the right link or the content instead of stopping
+        <span class="ja">[改善] Improved the Artifact tool so that when Claude is given a claude.ai chat or proj</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Changed interactive terminal and VS Code sessions to start in auto mode when no permission mode is configured, on every plan and provider; `permissions.defaultMode` still overrides it
+        <span class="ja">[その他] Changed interactive terminal and VS Code sessions to start in auto mode when no </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Changed Ultracode into its own toggle in `/effort` (Tab, or `/effort ultracode [on|off]`): it no longer forces xhigh effort and stays on at any effort level
+        <span class="ja">[その他] Changed Ultracode into its own toggle in `/effort` (Tab, or `/effort ultracode [</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Changed retries after a dropped connection mid-response to share one budget with the rest of the request&#39;s retries, so a failing request gives up sooner
+        <span class="ja">[その他] Changed retries after a dropped connection mid-response to share one budget with</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Changed the notice shown when a Sonnet model&#39;s safeguards flag a message to explain why it happened and to offer editing and retrying
+        <span class="ja">[その他] Changed the notice shown when a Sonnet model&#39;s safeguards flag a message to expl</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Changed safety-related model switches in sessions that pin an Opus model with `ANTHROPIC_DEFAULT_OPUS_MODEL` or `modelOverrides`: on the Anthropic API, the API now picks the model to switch to for each kind of flag, not the pinned model
+        <span class="ja">[その他] Changed safety-related model switches in sessions that pin an Opus model with `A</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Changed the non-interactive first turn to still wait up to 2s for connecting MCP servers named by `--allowedTools` or an `mcp_tool` hook, even when `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` is `0`
+        <span class="ja">[その他] Changed the non-interactive first turn to still wait up to 2s for connecting MCP</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Changed `/recap` to decline with a short notice when it arrives relayed from a chat thread (your own included) or from a routine or webhook; typed in the terminal, the Claude apps, Remote Control, `-p` or an SDK host, it runs as before
+        <span class="ja">[その他] Changed `/recap` to decline with a short notice when it arrives relayed from a c</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        Changed `/artifacts` to show its filter tabs beside the title with one-word labels (All, Mine, Shared), using the same tab bar as `/config` and `/plugin`
+        <span class="ja">[その他] Changed `/artifacts` to show its filter tabs beside the title with one-word labe</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        Changed artifact publishing to refuse a file on a network share (a `\\host\share` path or a `/net` automount) unless it is on a mapped network drive added with `--add-dir`
+        <span class="ja">[新機能] Changed artifact publishing to refuse a file on a network share (a `\\host\share</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        [VSCode] Added plugin load errors and notes to the Manage plugins rows, with a popup to disable, uninstall or copy the error
+        <span class="ja">[新機能] [VSCode] Added plugin load errors and notes to the Manage plugins rows, with a p</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        [VSCode] Added an Ultracode on/off switch under the Effort slider, replacing the slider&#39;s Ultracode stop; the model pill shows &#34;· Ultracode&#34; at any effort level
+        <span class="ja">[新機能] [VSCode] Added an Ultracode on/off switch under the Effort slider, replacing the</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="performance">
+      <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
+      <div class="text">
+        [VSCode] Fixed Reload Claude from the Memory dialog restarting before an edited file was saved
+        <span class="ja">[パフォーマンス] [VSCode] Fixed Reload Claude from the Memory dialog restarting before an edited </span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        [VSCode] Changed `CLAUDE_CONFIG_DIR` in the `claudeCode.environmentVariables` setting to apply only when it is an absolute path, and passed it to terminals that continue the chat
+        <span class="ja">[その他] [VSCode] Changed `CLAUDE_CONFIG_DIR` in the `claudeCode.environmentVariables` se</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        [Claude Tag] Added model family choices such as &#34;Opus (latest)&#34; for a thread, a channel default or your DM, so the choice follows the newest model in that family
+        <span class="ja">[新機能] [Claude Tag] Added model family choices such as &#34;Opus (latest)&#34; for a thread, a </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        [Claude Tag] Added the spend that counts toward your organization-wide limit to the analytics spend projection chart, with how much of the limit is used
+        <span class="ja">[新機能] [Claude Tag] Added the spend that counts toward your organization-wide limit to </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="other">
+      <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
+      <div class="text">
+        [Claude Tag] Changed Claude to post its private sign-in notice at every @mention from someone who hasn&#39;t connected their Claude account, instead of going quiet after the first
+        <span class="ja">[その他] [Claude Tag] Changed Claude to post its private sign-in notice at every @mention</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        [Claude Tag] Improved &#34;Notify members now&#34; in admin settings: one press reaches every workspace your organization claimed in an Enterprise Grid, and more members in large workspaces
+        <span class="ja">[改善] [Claude Tag] Improved &#34;Notify members now&#34; in admin settings: one press reaches </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        [Claude Tag] Improved Claude&#39;s wait notice on self-hosted environments with on-demand runners: it now says whether a runner is starting, a start will be retried, or no runner will start
+        <span class="ja">[改善] [Claude Tag] Improved Claude&#39;s wait notice on self-hosted environments with on-d</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        [Claude Tag] Improved the error shown when adding a channel manager fails because the channel&#39;s Slack workspace can&#39;t be confirmed as connected to your organization
+        <span class="ja">[新機能] [Claude Tag] Improved the error shown when adding a channel manager fails becaus</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="improvement">
+      <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
+      <div class="text">
+        [Claude Tag] Improved a channel&#39;s access lists in admin settings to show the connectors, repositories and plugins an auto-join pattern attaches, and where each comes from
+        <span class="ja">[改善] [Claude Tag] Improved a channel&#39;s access lists in admin settings to show the con</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="new_feature">
+      <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
+      <div class="text">
+        [Claude Tag] Improved adding repositories as a channel manager: when your GitHub sign-in can&#39;t confirm you&#39;re a repository admin, the page asks you to sign in with GitHub
+        <span class="ja">[新機能] [Claude Tag] Improved adding repositories as a channel manager: when your GitHub</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a damaged response stream showing raw errors such as &#34;JSON Parse error&#34; or &#34;undefined is not an object&#34;, or writing the word &#34;undefined&#34; into an answer, instead of being retried or reported as an interrupted response
+        <span class="ja">[バグ修正] Fixed a damaged response stream showing raw errors such as &#34;JSON Parse error&#34; or</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed an overloaded or server error arriving right after a thinking block ending the turn with an error instead of being retried
+        <span class="ja">[バグ修正] Fixed an overloaded or server error arriving right after a thinking block ending</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed &#34;Prompt is too long&#34; errors that persisted after compacting: when the compacted request is still too long, Claude Code now compacts once more, keeping less of the recent conversation
+        <span class="ja">[バグ修正] Fixed &#34;Prompt is too long&#34; errors that persisted after compacting: when the comp</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a session whose model is unavailable, with no fallback model left, showing a bare &#34;is currently unavailable&#34; message (or &#34;Something went wrong&#34; in cloud sessions) instead of the model-unavailable notice and its Learn more link
+        <span class="ja">[バグ修正] Fixed a session whose model is unavailable, with no fallback model left, showing</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed Agent SDK sessions crashing when a user message contains an image with a malformed `source`, and failing on every later turn after a malformed document block; a malformed image is now replaced with an explanatory note
+        <span class="ja">[バグ修正] Fixed Agent SDK sessions crashing when a user message contains an image with a m</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed MCP tool calls in a resumed session failing with &#34;No such tool available&#34; while their server was still connecting; the call now waits up to 10 seconds for the server
+        <span class="ja">[バグ修正] Fixed MCP tool calls in a resumed session failing with &#34;No such tool available&#34; </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed repeated calls to the plan-usage endpoint after it rate-limits or rejects your login: `/usage`, `/extra-usage` and IDE usage views now back off instead of re-asking
+        <span class="ja">[バグ修正] Fixed repeated calls to the plan-usage endpoint after it rate-limits or rejects </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the `/plugin` configure screen: boolean options are now a true/false choice instead of free text, number options refuse invalid input, and ←/→ change an options field instead of switching tabs
+        <span class="ja">[バグ修正] Fixed the `/plugin` configure screen: boolean options are now a true/false choic</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `ANTHROPIC_FOUNDRY_RESOURCE` being interpolated into the Foundry endpoint host unvalidated; a value that is not a plain resource name is now refused
+        <span class="ja">[バグ修正] Fixed `ANTHROPIC_FOUNDRY_RESOURCE` being interpolated into the Foundry endpoint </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed Claude Desktop behind a Claude apps gateway offering no 1M context option: the gateway now marks each 1M-capable model for Desktop automatically
+        <span class="ja">[バグ修正] Fixed Claude Desktop behind a Claude apps gateway offering no 1M context option:</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed ↓ in shell mode selecting a hidden background-tasks pill, which stopped Backspace and Ctrl+U from editing the prompt
+        <span class="ja">[バグ修正] Fixed ↓ in shell mode selecting a hidden background-tasks pill, which stopped Ba</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `sparsePaths` plugin marketplaces cloning empty and replacing a working local copy on older git (before 2.39), which failed every refresh with &#34;marketplace.json file is no longer present&#34;
+        <span class="ja">[バグ修正] Fixed `sparsePaths` plugin marketplaces cloning empty and replacing a working lo</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed fullscreen rendering erasing the terminal output above the session when `[` in transcript mode writes the conversation to scrollback (macOS and Linux)
+        <span class="ja">[バグ修正] Fixed fullscreen rendering erasing the terminal output above the session when `[</span>
+        <span class="platforms">[macos, linux]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed fullscreen scroll position jumping to the previous message or to the bottom when a reply finished streaming while scrolled up
+        <span class="ja">[バグ修正] Fixed fullscreen scroll position jumping to the previous message or to the botto</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed tab bars in dialogs such as `/config` and `/plugin` breaking the title and tab labels mid-word in a narrow terminal; a tab that doesn&#39;t fit now moves to the next line whole
+        <span class="ja">[バグ修正] Fixed tab bars in dialogs such as `/config` and `/plugin` breaking the title and</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the `/model` picker showing &#34;+1 model&#34; below the list after scrolling to the last model; the count now covers only the models below the visible rows
+        <span class="ja">[バグ修正] Fixed the `/model` picker showing &#34;+1 model&#34; below the list after scrolling to t</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `/keybindings` writing Backspace and Delete bindings for a footer action that does nothing into the generated `keybindings.json`
+        <span class="ja">[バグ修正] Fixed `/keybindings` writing Backspace and Delete bindings for a footer action t</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a rebound agent panel close key (`footer:close`) typing &#34;x&#34; instead of itself on the row of the agent you&#39;re viewing
+        <span class="ja">[バグ修正] Fixed a rebound agent panel close key (`footer:close`) typing &#34;x&#34; instead of its</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed vim mode `.` not repeating text typed very fast (for example over ssh or in tmux) or pasted without bracketed paste, and leaving the prompt in INSERT mode after repeating a change with nothing typed (such as `cw` then Esc)
+        <span class="ja">[バグ修正] Fixed vim mode `.` not repeating text typed very fast (for example over ssh or i</span>
+        <span class="platforms">[ssh]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed vim mode leaving the cursor on an image placeholder&#39;s opening bracket after `dd` on the last line or `yy` at the end of the prompt, where `r` or `x` would break or delete the image
+        <span class="ja">[バグ修正] Fixed vim mode leaving the cursor on an image placeholder&#39;s opening bracket afte</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a key pressed the instant the terminal regained focus answering the Remote Control enable prompt before its short safety delay restarted
+        <span class="ja">[バグ修正] Fixed a key pressed the instant the terminal regained focus answering the Remote</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the workspace trust dialog appearing a second time after switching renderers or updating when Claude Code was started in the home directory
+        <span class="ja">[バグ修正] Fixed the workspace trust dialog appearing a second time after switching rendere</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed rules symlinked into `.claude/rules` from outside the project being skipped without ever showing the external-imports approval prompt; a `.claude` directory symlinked from outside the project now asks for the same approval
+        <span class="ja">[バグ修正] Fixed rules symlinked into `.claude/rules` from outside the project being skippe</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed plugins from marketplaces, claude.ai and npm pre-approving their own tools via `allowed-tools` under managed `allowManagedPermissionRulesOnly`; only plugins from an official Anthropic source or a source that managed settings vouch for keep that pre-approval
+        <span class="ja">[バグ修正] Fixed plugins from marketplaces, claude.ai and npm pre-approving their own tools</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a failed first `claude plugin install` leaving the plugin enabled and recorded when a dependency&#39;s version range could not be met
+        <span class="ja">[バグ修正] Fixed a failed first `claude plugin install` leaving the plugin enabled and reco</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the debug log dropping a failed hook&#39;s stderr when the hook also wrote to stdout, and logging nothing for a failed hook with no output; failed hooks now also log their status code
+        <span class="ja">[バグ修正] Fixed the debug log dropping a failed hook&#39;s stderr when the hook also wrote to </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `{&#34;decision&#34;:&#34;block&#34;}` returned by Elicitation and ElicitationResult hooks being ignored; it now declines the MCP elicitation, as exit code 2 does
+        <span class="ja">[バグ修正] Fixed `{&#34;decision&#34;:&#34;block&#34;}` returned by Elicitation and ElicitationResult hooks</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed a photo sent from the Claude app over Remote Control being lost when its queued message was pulled back into the terminal prompt to edit, and the cursor moving one character for a photo with no caption
+        <span class="ja">[バグ修正] Fixed a photo sent from the Claude app over Remote Control being lost when its q</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed typing a message during an automatic usage-limit wait taking the wait out of the &#34;Continue automatically at usage limit&#34; setting&#39;s control when that turn hit the limit again
+        <span class="ja">[バグ修正] Fixed typing a message during an automatic usage-limit wait taking the wait out </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed usage-limit warnings suggesting `/upgrade` to users already on the highest Max plan; the warnings and `/upgrade` itself now point at `/usage-credits` when it is available
+        <span class="ja">[バグ修正] Fixed usage-limit warnings suggesting `/upgrade` to users already on the highest</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the Explore subagent switching to Opus on the Claude API when the session runs a model ID Claude Code doesn&#39;t recognize, such as a custom model behind a proxy; Explore now inherits that model
+        <span class="ja">[バグ修正] Fixed the Explore subagent switching to Opus on the Claude API when the session </span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `/loop` status updates in self-paced mode often not being shown because Claude wrote them only in its reasoning; Claude now writes each update, and the outcome when the loop stops, as visible text
+        <span class="ja">[バグ修正] Fixed `/loop` status updates in self-paced mode often not being shown because Cl</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed `/ultrareview` failing to upload the working tree when started from a git worktree that the Claude desktop app created on macOS or Linux
+        <span class="ja">[バグ修正] Fixed `/ultrareview` failing to upload the working tree when started from a git </span>
+        <span class="platforms">[macos, linux]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed sandboxed Bash commands failing to start on Linux when the working directory is write-denied and contains a read-denied directory
+        <span class="ja">[バグ修正] Fixed sandboxed Bash commands failing to start on Linux when the working directo</span>
+        <span class="platforms">[linux]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        Fixed the Claude apps gateway answering `431 Request Header Fields Too Large` to every request from a sign-in whose identity provider lists many groups; it now accepts request headers up to 256 KiB
+        <span class="ja">[バグ修正] Fixed the Claude apps gateway answering `431 Request Header Fields Too Large` to</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed a restored tab opening a conversation another Claude process still has open; it now asks first
+        <span class="ja">[バグ修正] [VSCode] Fixed a restored tab opening a conversation another Claude process stil</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed Focus view sections you expanded closing on their own while a sub-agent is working or when the section&#39;s first step is trimmed from view
+        <span class="ja">[バグ修正] [VSCode] Fixed Focus view sections you expanded closing on their own while a sub</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed typing `/model` and Enter printing usage text into the chat instead of opening the model selector
+        <span class="ja">[バグ修正] [VSCode] Fixed typing `/model` and Enter printing usage text into the chat inste</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed `/feedback` on Vertex, Bedrock and Foundry being refused after you pressed Send; the report is now saved on this computer, as the terminal does
+        <span class="ja">[バグ修正] [VSCode] Fixed `/feedback` on Vertex, Bedrock and Foundry being refused after yo</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed sign-in waiting up to a minute for the Python extension after a window reload
+        <span class="ja">[バグ修正] [VSCode] Fixed sign-in waiting up to a minute for the Python extension after a w</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed Claude Code tabs that stopped responding after Restart Extensions: they now reopen on their conversation
+        <span class="ja">[バグ修正] [VSCode] Fixed Claude Code tabs that stopped responding after Restart Extensions</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed a message from another agent with no recorded sender showing as raw XML in the chat
+        <span class="ja">[バグ修正] [VSCode] Fixed a message from another agent with no recorded sender showing as r</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed messages from other agents, sessions or channels disappearing after a reload
+        <span class="ja">[バグ修正] [VSCode] Fixed messages from other agents, sessions or channels disappearing aft</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed a user&#39;s own `/mcp`, `/config` or `/settings` command being shadowed by the extension&#39;s dialog
+        <span class="ja">[バグ修正] [VSCode] Fixed a user&#39;s own `/mcp`, `/config` or `/settings` command being shado</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed Escape stopping every background agent when no turn was running
+        <span class="ja">[バグ修正] [VSCode] Fixed Escape stopping every background agent when no turn was running</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed plugin install links replacing a marketplace you already have that uses the same name
+        <span class="ja">[バグ修正] [VSCode] Fixed plugin install links replacing a marketplace you already have tha</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed &#34;Prompt is too long&#34; errors after compaction when a large text file is attached to a message
+        <span class="ja">[バグ修正] [VSCode] Fixed &#34;Prompt is too long&#34; errors after compaction when a large text fi</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [VSCode] Fixed chat links to files with non-ASCII characters, spaces or brackets in their path not opening
+        <span class="ja">[バグ修正] [VSCode] Fixed chat links to files with non-ASCII characters, spaces or brackets</span>
+        <span class="platforms">[vscode]</span>
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [Cloud sessions] Fixed a routine&#39;s Edit and Duplicate controls saying the routine was still loading while you were offline; they now tell you you&#39;re offline
+        <span class="ja">[バグ修正] [Cloud sessions] Fixed a routine&#39;s Edit and Duplicate controls saying the routin</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [Claude Tag] Fixed the earlier Claude in Slack app&#39;s progress card and link previews omitting the repository and Create PR button when a GitHub Enterprise host name contains an underscore
+        <span class="ja">[バグ修正] [Claude Tag] Fixed the earlier Claude in Slack app&#39;s progress card and link prev</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [Claude Tag] Fixed Claude staying silent in a channel whose environment declines to start it; it now posts one notice asking you to contact an admin, and retries when @-mentioned
+        <span class="ja">[バグ修正] [Claude Tag] Fixed Claude staying silent in a channel whose environment declines</span>
+        
+      </div>
+    </div>
+    
+    <div class="entry" data-cat="bug_fix">
+      <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
+      <div class="text">
+        [Code Review] Fixed Code Review giving up without posting a finished review when an unsubmitted review under its GitHub App was open on the pull request; it now retries the post first
+        <span class="ja">[バグ修正] [Code Review] Fixed Code Review giving up without posting a finished review when</span>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="version" data-version="2.1.283">
   <div class="version-header">
     <h2>v2.1.283</h2>
     <span class="release-date">2026-09-26 03:46 JST</span>
@@ -7110,7 +8022,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction` and `x-claude-code-context-compacted` request headers for LLM gateways; opt in with `CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`
-        <span class="ja">[新機能] Added `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-</span>
+        
         
       </div>
     </div>
@@ -7119,7 +8031,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added a notification when an MCP server disconnects mid-session and automatic reconnection gives up, pointing at `/mcp`
-        <span class="ja">[新機能] Added a notification when an MCP server disconnects mid-session and automatic re</span>
+        
         
       </div>
     </div>
@@ -7128,7 +8040,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Added forking a session started with `claude --remote-control` or `/remote-control` from the Claude app; the fork runs as a background session on your computer
-        <span class="ja">[新機能] Added forking a session started with `claude --remote-control` or `/remote-contr</span>
+        
         
       </div>
     </div>
@@ -7137,7 +8049,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
       <div class="text">
         Fixed `permissions.blockReadsOutsideWorkingDirectories`: a memory directory chosen by a repository&#39;s settings is no longer loaded into the prompt, recalled, indexed, or used by memory extraction
-        <span class="ja">[パフォーマンス] Fixed `permissions.blockReadsOutsideWorkingDirectories`: a memory directory chos</span>
+        
         
       </div>
     </div>
@@ -7146,7 +8058,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Fixed saved scheduled tasks running in the wrong session after `.claude/scheduled_tasks.json` was copied into another folder, such as a new worktree
-        <span class="ja">[新機能] Fixed saved scheduled tasks running in the wrong session after `.claude/schedule</span>
+        
         
       </div>
     </div>
@@ -7155,7 +8067,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Reverted a 2.1.268 change that checked Read and Edit deny rules on Bash lines the permission checker can&#39;t analyze (`eval`, `env -C`); commands like `time -p make build` prompt again instead of being denied
-        <span class="ja">[その他] Reverted a 2.1.268 change that checked Read and Edit deny rules on Bash lines th</span>
+        
         
       </div>
     </div>
@@ -7164,7 +8076,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved responsiveness in long sessions: hook progress and sub-agent activity no longer re-process the whole conversation on every update
-        <span class="ja">[改善] Improved responsiveness in long sessions: hook progress and sub-agent activity n</span>
+        
         
       </div>
     </div>
@@ -7173,7 +8085,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved the Artifact tool&#39;s error when a publish includes a file type artifacts don&#39;t serve: Claude is told which types are served and what to do instead, and the terminal shows one plain line
-        <span class="ja">[改善] Improved the Artifact tool&#39;s error when a publish includes a file type artifacts</span>
+        
         
       </div>
     </div>
@@ -7182,7 +8094,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved the Artifact tool&#39;s page read to state the capabilities and database rules the artifact service holds for the page, for anyone who can publish to it
-        <span class="ja">[改善] Improved the Artifact tool&#39;s page read to state the capabilities and database ru</span>
+        
         
       </div>
     </div>
@@ -7191,7 +8103,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved artifact database writes: an update can now remove a single field instead of rewriting the whole document
-        <span class="ja">[改善] Improved artifact database writes: an update can now remove a single field inste</span>
+        
         
       </div>
     </div>
@@ -7200,7 +8112,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved artifact publishing: a publish whose connection drops after reaching claude.ai is now re-sent safely instead of failing or creating a duplicate version
-        <span class="ja">[改善] Improved artifact publishing: a publish whose connection drops after reaching cl</span>
+        
         
       </div>
     </div>
@@ -7209,7 +8121,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved the cloud-session GitHub error for an IP allow list, a suspended app installation or SAML single sign-on to show the cause instead of a generic install hint
-        <span class="ja">[改善] Improved the cloud-session GitHub error for an IP allow list, a suspended app in</span>
+        
         
       </div>
     </div>
@@ -7218,7 +8130,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved `/autofix-pr`: when `gh pr view` fails it now shows gh&#39;s own error (sign-in, SAML, rate limit) instead of a generic exit-code line
-        <span class="ja">[改善] Improved `/autofix-pr`: when `gh pr view` fails it now shows gh&#39;s own error (sig</span>
+        
         
       </div>
     </div>
@@ -7227,7 +8139,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved `/autofix-pr` to say why GitHub webhook delivery couldn&#39;t be set up for the PR (for example, no linked GitHub account) instead of a generic warning
-        <span class="ja">[改善] Improved `/autofix-pr` to say why GitHub webhook delivery couldn&#39;t be set up for</span>
+        
         
       </div>
     </div>
@@ -7236,7 +8148,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved the error when a cloud session can&#39;t be created because your Claude login expired or was revoked: it now tells you to run `/login`
-        <span class="ja">[改善] Improved the error when a cloud session can&#39;t be created because your Claude log</span>
+        
         
       </div>
     </div>
@@ -7245,7 +8157,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         Improved the error shown when an MCP server&#39;s sign-in expires mid-session to say how to re-authenticate (`/mcp`)
-        <span class="ja">[改善] Improved the error shown when an MCP server&#39;s sign-in expires mid-session to say</span>
+        
         
       </div>
     </div>
@@ -7254,7 +8166,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Changed auto mode on Bedrock, Vertex and Foundry to use the local classifier by default for now; set `CLAUDE_CODE_AUTO_MODE_SERVER=1` to use the platform&#39;s server-side classifier
-        <span class="ja">[その他] Changed auto mode on Bedrock, Vertex and Foundry to use the local classifier by </span>
+        
         
       </div>
     </div>
@@ -7263,7 +8175,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Changed `OTEL_LOG_TOOL_DETAILS=1` to also include real agent, skill, plugin and MCP server names on cost and token metrics
-        <span class="ja">[その他] Changed `OTEL_LOG_TOOL_DETAILS=1` to also include real agent, skill, plugin and </span>
+        
         
       </div>
     </div>
@@ -7272,7 +8184,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Changed sign-in with a Claude account to also request access to your claude.ai plugins
-        <span class="ja">[その他] Changed sign-in with a Claude account to also request access to your claude.ai p</span>
+        
         
       </div>
     </div>
@@ -7281,7 +8193,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         Changed `/bug` and `/feedback` reports to include only model-behavior params (model, system prompt, tools) from the last API request, omitting request metadata and `CLAUDE_CODE_EXTRA_BODY` fields
-        <span class="ja">[その他] Changed `/bug` and `/feedback` reports to include only model-behavior params (mo</span>
+        
         
       </div>
     </div>
@@ -7290,7 +8202,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         Windows: Improved the network-path permission check for UNC paths when a mapped network drive was added with `--add-dir`
-        <span class="ja">[新機能] Windows: Improved the network-path permission check for UNC paths when a mapped </span>
+        
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -7299,7 +8211,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         [Claude Code on the web] Changed the admin &#34;Share cloud sessions&#34; setting to live under Data and privacy instead of the Claude Code page, where Data and privacy admins can also manage it
-        <span class="ja">[その他] [Claude Code on the web] Changed the admin &#34;Share cloud sessions&#34; setting to liv</span>
+        
         
       </div>
     </div>
@@ -7308,7 +8220,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         [Claude Code on the web] Added a &#34;Discard unsaved changes?&#34; confirmation before the New routine page or the Edit routine dialog throws away a routine name, prompt or edit you typed
-        <span class="ja">[新機能] [Claude Code on the web] Added a &#34;Discard unsaved changes?&#34; confirmation before </span>
+        
         
       </div>
     </div>
@@ -7317,7 +8229,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         [Claude Code on the web] Removed the full-page desktop-app download screen that new users without a cloud environment saw on Mac and Windows; they now go straight to setup
-        <span class="ja">[新機能] [Claude Code on the web] Removed the full-page desktop-app download screen that </span>
+        
         <span class="platforms">[windows]</span>
       </div>
     </div>
@@ -7326,7 +8238,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         [Claude Code on the web] Improved the routine detail page: menu and rename in the breadcrumb, the on/off switch and Run now at the top, and run history beside the routine&#39;s settings
-        <span class="ja">[改善] [Claude Code on the web] Improved the routine detail page: menu and rename in th</span>
+        
         
       </div>
     </div>
@@ -7335,7 +8247,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fee2e2;color:#dc2626">新機能</span>
       <div class="text">
         [Claude Tag] Fixed adding a channel manager being refused on Enterprise Grid shared channels, on channels where Claude hasn&#39;t been used yet, and on legacy private channels
-        <span class="ja">[新機能] [Claude Tag] Fixed adding a channel manager being refused on Enterprise Grid sha</span>
+        
         
       </div>
     </div>
@@ -7344,7 +8256,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f0f0ee;color:#5c5c5a">その他</span>
       <div class="text">
         [Claude Tag] Changed Claude to start watching related public channels on its own, such as an incident channel a conversation depends on, instead of only when asked
-        <span class="ja">[その他] [Claude Tag] Changed Claude to start watching related public channels on its own</span>
+        
         
       </div>
     </div>
@@ -7353,7 +8265,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#f5f0ff;color:#8250df">パフォーマンス</span>
       <div class="text">
         [Claude Tag] Fixed the admin Memory page not listing Slack channels Claude set up on its own even when they had saved memory; admins can now open, edit and delete that memory
-        <span class="ja">[パフォーマンス] [Claude Tag] Fixed the admin Memory page not listing Slack channels Claude set u</span>
+        
         
       </div>
     </div>
@@ -7362,7 +8274,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#ddf4ff;color:#0969da">改善</span>
       <div class="text">
         [Code Review] Improved review comments that point to a second affected location to state that location&#39;s issue in a full sentence instead of a cut-off stub
-        <span class="ja">[改善] [Code Review] Improved review comments that point to a second affected location </span>
+        
         
       </div>
     </div>
@@ -7371,7 +8283,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Bash commands the permission checker cannot fully analyze skipping the prompt under `permissions.blockReadsOutsideWorkingDirectories`, and a subshell hiding a dangerous `rm` in bypass mode
-        <span class="ja">[バグ修正] Fixed Bash commands the permission checker cannot fully analyze skipping the pro</span>
+        
         
       </div>
     </div>
@@ -7380,7 +8292,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed skills synced from claude.ai staying available after your organization turns Skills off; they now move to the recoverable trash
-        <span class="ja">[バグ修正] Fixed skills synced from claude.ai staying available after your organization tur</span>
+        
         
       </div>
     </div>
@@ -7389,7 +8301,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `allowManagedMcpServersOnly`, `deniedMcpServers` and `disableClaudeAiConnectors` set via MDM or `managed-settings.json` being ignored when server-managed settings are also present
-        <span class="ja">[バグ修正] Fixed `allowManagedMcpServersOnly`, `deniedMcpServers` and `disableClaudeAiConne</span>
+        
         
       </div>
     </div>
@@ -7398,7 +8310,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed 401/403 errors on Bedrock, Vertex and Foundry, and Claude apps gateway 403s, telling you to run `/login`; the message now names the credential to refresh or points to your gateway administrator
-        <span class="ja">[バグ修正] Fixed 401/403 errors on Bedrock, Vertex and Foundry, and Claude apps gateway 403</span>
+        
         
       </div>
     </div>
@@ -7407,7 +8319,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/login`, `/upgrade`, and `/extra-usage` discarding earlier thinking from the conversation, which forced a full prompt-cache rewrite on the next request
-        <span class="ja">[バグ修正] Fixed `/login`, `/upgrade`, and `/extra-usage` discarding earlier thinking from </span>
+        
         
       </div>
     </div>
@@ -7416,7 +8328,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed auto mode stopping for approval when the Artifact tool uploads a file you attached to the chat in a cloud or Remote Control session
-        <span class="ja">[バグ修正] Fixed auto mode stopping for approval when the Artifact tool uploads a file you </span>
+        
         
       </div>
     </div>
@@ -7425,7 +8337,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a long-running session recreating a stub `.git/info/exclude` after the repository&#39;s `.git` directory was removed or moved away
-        <span class="ja">[バグ修正] Fixed a long-running session recreating a stub `.git/info/exclude` after the rep</span>
+        
         
       </div>
     </div>
@@ -7434,7 +8346,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed the main prompt dropping a `!` typed at the start while already in shell mode, so negated commands like `! grep …` can be typed
-        <span class="ja">[バグ修正] Fixed the main prompt dropping a `!` typed at the start while already in shell m</span>
+        
         
       </div>
     </div>
@@ -7443,7 +8355,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Read on macOS refusing a dragged-in screenshot, or any file the system reports under a second path, with &#34;symlink resolution changed after permission was checked&#34;
-        <span class="ja">[バグ修正] Fixed Read on macOS refusing a dragged-in screenshot, or any file the system rep</span>
+        
         <span class="platforms">[macos]</span>
       </div>
     </div>
@@ -7452,7 +8364,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed sub-agents and background agents being reported as failed, with their result never delivered, when the final streamed reply omitted token usage or carried no model id
-        <span class="ja">[バグ修正] Fixed sub-agents and background agents being reported as failed, with their resu</span>
+        
         
       </div>
     </div>
@@ -7461,7 +8373,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed the context meter and auto-compact counting advisor-tool turns at roughly twice their real context size, which made auto-compact fire at about half the real window
-        <span class="ja">[バグ修正] Fixed the context meter and auto-compact counting advisor-tool turns at roughly </span>
+        
         
       </div>
     </div>
@@ -7470,7 +8382,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/tui` refusing to restart because of an agent-team teammate that had already finished its work and was no longer shown in the agents panel
-        <span class="ja">[バグ修正] Fixed `/tui` refusing to restart because of an agent-team teammate that had alre</span>
+        
         
       </div>
     </div>
@@ -7479,7 +8391,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed SDK and `--output-format stream-json` output dropping a subagent&#39;s remaining messages and final report after it is moved to the background mid-run (e.g. by `CLAUDE_AUTO_BACKGROUND_TASKS`)
-        <span class="ja">[バグ修正] Fixed SDK and `--output-format stream-json` output dropping a subagent&#39;s remaini</span>
+        
         
       </div>
     </div>
@@ -7488,7 +8400,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed `/install-github-app` reporting a SAML single sign-on block as &#34;admin permissions required&#34;
-        <span class="ja">[バグ修正] Fixed `/install-github-app` reporting a SAML single sign-on block as &#34;admin perm</span>
+        
         
       </div>
     </div>
@@ -7497,7 +8409,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed Remote Control clients attached to a Claude Desktop, VS Code or JetBrains session being refused when they ask for the session&#39;s context window usage
-        <span class="ja">[バグ修正] Fixed Remote Control clients attached to a Claude Desktop, VS Code or JetBrains </span>
+        
         
       </div>
     </div>
@@ -7506,7 +8418,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed the spinner showing a doubled ellipsis (&#34;……&#34;) on compaction status lines such as &#34;Running PreCompact hooks…&#34;
-        <span class="ja">[バグ修正] Fixed the spinner showing a doubled ellipsis (&#34;……&#34;) on compaction status lines s</span>
+        
         
       </div>
     </div>
@@ -7515,7 +8427,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Fixed a false-positive spinner tip suggesting the frontend-design plugin after reading or publishing Artifacts
-        <span class="ja">[バグ修正] Fixed a false-positive spinner tip suggesting the frontend-design plugin after r</span>
+        
         
       </div>
     </div>
@@ -7524,7 +8436,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Improved `/web-setup` errors: a refused GitHub token now lists the likely reasons and the fix, and a connection failure names a configured proxy or TLS certificate problem
-        <span class="ja">[バグ修正] Improved `/web-setup` errors: a refused GitHub token now lists the likely reason</span>
+        
         
       </div>
     </div>
@@ -7533,7 +8445,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         Improved the in-session SSL certificate and proxy connection errors to name the error code and what to fix, such as `NODE_EXTRA_CA_CERTS` for an untrusted corporate CA
-        <span class="ja">[バグ修正] Improved the in-session SSL certificate and proxy connection errors to name the </span>
+        
         
       </div>
     </div>
@@ -7542,7 +8454,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [VSCode] Fixed &#34;Report a problem&#34; still appearing, and `/bug` / `/feedback` opening a report form, for organizations that have product feedback disabled
-        <span class="ja">[バグ修正] [VSCode] Fixed &#34;Report a problem&#34; still appearing, and `/bug` / `/feedback` open</span>
+        
         <span class="platforms">[vscode]</span>
       </div>
     </div>
@@ -7551,7 +8463,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [VSCode] Fixed a red &#34;Claude Code process exited with code 4294967295&#34; banner appearing after completed turns on Windows
-        <span class="ja">[バグ修正] [VSCode] Fixed a red &#34;Claude Code process exited with code 4294967295&#34; banner ap</span>
+        
         <span class="platforms">[vscode, windows]</span>
       </div>
     </div>
@@ -7560,7 +8472,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Code on the web] Fixed routines losing access to an organization connector, and still calling the old one, after an admin removed and re-added that connector
-        <span class="ja">[バグ修正] [Claude Code on the web] Fixed routines losing access to an organization connect</span>
+        
         
       </div>
     </div>
@@ -7569,7 +8481,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Code on the web] Fixed creating a self-hosted environment from organization settings occasionally failing with a server error and leaving a half-created environment behind
-        <span class="ja">[バグ修正] [Claude Code on the web] Fixed creating a self-hosted environment from organizat</span>
+        
         
       </div>
     </div>
@@ -7578,7 +8490,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Tag] Fixed Claude going silent minutes after reinstalling the app when an Enterprise Grid was disconnected but one of its workspaces stayed connected
-        <span class="ja">[バグ修正] [Claude Tag] Fixed Claude going silent minutes after reinstalling the app when a</span>
+        
         
       </div>
     </div>
@@ -7587,7 +8499,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Tag] Fixed scheduled tasks set up in an organization-shared private Slack channel silently never posting; they now keep running in the thread they were created in
-        <span class="ja">[バグ修正] [Claude Tag] Fixed scheduled tasks set up in an organization-shared private Slac</span>
+        
         
       </div>
     </div>
@@ -7596,7 +8508,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Tag] Fixed replying in an older Slack thread while Claude is mid-task sometimes restarting it from scratch and losing work it had not pushed yet
-        <span class="ja">[バグ修正] [Claude Tag] Fixed replying in an older Slack thread while Claude is mid-task so</span>
+        
         
       </div>
     </div>
@@ -7605,7 +8517,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Tag] Fixed Claude occasionally dropping a message with an incorrect &#34;couldn&#39;t find a Claude Code environment&#34; notice right after your account token refreshed
-        <span class="ja">[バグ修正] [Claude Tag] Fixed Claude occasionally dropping a message with an incorrect &#34;cou</span>
+        
         
       </div>
     </div>
@@ -7614,7 +8526,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Tag] Fixed AWS connections refusing region-less endpoints such as Budgets, Savings Plans, WAF Classic and Import/Export; Global Accelerator requests now sign correctly
-        <span class="ja">[バグ修正] [Claude Tag] Fixed AWS connections refusing region-less endpoints such as Budget</span>
+        
         
       </div>
     </div>
@@ -7623,7 +8535,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Tag] Improved AWS connection failures: when a request can&#39;t be signed, such as a hostname with no region, Claude is told why and how to fix it instead of a bare error
-        <span class="ja">[バグ修正] [Claude Tag] Improved AWS connection failures: when a request can&#39;t be signed, s</span>
+        
         
       </div>
     </div>
@@ -7632,7 +8544,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Claude Tag] Fixed OAuth client-credentials and JWT-bearer connections failing with providers that return a lowercase token type; requests now send the standard Bearer scheme
-        <span class="ja">[バグ修正] [Claude Tag] Fixed OAuth client-credentials and JWT-bearer connections failing w</span>
+        
         
       </div>
     </div>
@@ -7641,7 +8553,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Code Review] Fixed merging the base branch into a PR whose earlier review listed &#34;Additional findings&#34; triggering a full re-review; these pushes now get the lighter follow-up review
-        <span class="ja">[バグ修正] [Code Review] Fixed merging the base branch into a PR whose earlier review liste</span>
+        
         
       </div>
     </div>
@@ -7650,7 +8562,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Code Review] Fixed a whole REVIEW.md being ignored because of an @-mention, a code span wrapped across lines, or a backticked HTML tag; only lines linking to changed files are withheld
-        <span class="ja">[バグ修正] [Code Review] Fixed a whole REVIEW.md being ignored because of an @-mention, a c</span>
+        
         
       </div>
     </div>
@@ -7659,7 +8571,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Code Review] Improved suggested fixes to say what the fix must keep working when other code depends on the behavior being changed
-        <span class="ja">[バグ修正] [Code Review] Improved suggested fixes to say what the fix must keep working whe</span>
+        
         
       </div>
     </div>
@@ -7668,7 +8580,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Code Review] Fixed `/ultrareview --post` so a retry after a GitHub error posts the findings comment exactly once instead of never or twice; the comment now names the reviewed commit
-        <span class="ja">[バグ修正] [Code Review] Fixed `/ultrareview --post` so a retry after a GitHub error posts </span>
+        
         
       </div>
     </div>
@@ -7677,7 +8589,7 @@ footer a:hover { text-decoration: underline; }
       <span class="cat-badge" style="background:#fff3e0;color:#b35c00">バグ修正</span>
       <div class="text">
         [Code Review] Fixed empty or content-identical pushes being re-reviewed on GitHub repositories whose owner or name contains a capital letter; these pushes are now skipped
-        <span class="ja">[バグ修正] [Code Review] Fixed empty or content-identical pushes being re-reviewed on GitHu</span>
+        
         
       </div>
     </div>
@@ -62819,6 +63731,8 @@ document.querySelectorAll('.version-header').forEach(hdr => {
 // --- Release Frequency Chart ---
 (function() {
   const releaseData = [
+    
+    { version: "2.1.284", date: "2026-09-29", entries: 100 },
     
     { version: "2.1.283", date: "2026-09-26", entries: 94 },
     
